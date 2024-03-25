@@ -1,0 +1,55 @@
+
+
+
+.pink{
+    background-color:rgba(0,0,0, 40%);
+    text-align:center;
+    margin-bottom:0; 
+    }
+  
+  
+  
+  body {   
+    background-image:url(johnwho.png); 
+    color:white;
+    font-size:1.2em;
+    position: center;
+    z-index: -1;
+    max-width: 80vh;
+    max-height: 80vh;
+    margin: 0vh 60vh
+    } 
+  
+  
+  
+  fieldset{
+  background-color:rgba(0,0,0, 65%);
+    border-color:transparent;
+    border-top-width:25px;
+  }
+  
+  #survey-form{
+    padding-bottom:15;
+  
+  }
+  
+  label{
+    display:block;
+    margin: 15px 0;  
+  }
+  
+  
+  
+  button{
+    margin:0 13;
+    width:13em;
+    height:1.5em;
+    font-size:30px;
+    background-color:green
+  }
+  
+  footer{
+    background-color:rgba(0,0,0, 80%);
+    text-align:center;
+    font-size:20px;
+  }
