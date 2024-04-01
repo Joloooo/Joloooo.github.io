@@ -1,0 +1,60 @@
+* {
+  box-sizing:border-box; 
+  } 
+  
+  
+  body{
+    background-color:gray;
+    margin:0;
+  
+  }
+  
+   h1{
+  background-color:black;
+  color:white;
+  text-align:center;
+  margin:0;
+   }
+  
+  main{
+  padding-left:8em;
+  }
+  
+  
+  header{
+    background-color: pink;
+    color:black;
+    margin:0;
+    text-align:center;
+    min-width:7em;
+    max-width:10em;
+    border-right: 4px solid black;
+    position:fixed;
+    top:0px;
+    bottom: 0;
+  
+  }
+  
+  
+  nav>ul, nav{
+    padding-top: 0.5em;
+    padding-bottom:0;
+    padding-left:0;
+    border:0;
+    margin:0;
+    list-style:none; ##removing bullet points
+  
+  }
+  header>nav>ul>li{
+  border-top: 2px solid black;
+  border-left:0;
+  padding:7 0;
+  
+  
+  
+  }
+  
+  footer{
+    background-color:black;
+    color:white;
+    padding-left:8em

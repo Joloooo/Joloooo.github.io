@@ -1,0 +1,144 @@
+<!DOCTYPE html>  
+<html lang="en"> 
+<head>  
+  <meta name=viewport content="width=device-width, initial-scale=1.0"/> 
+  <meta charset="UTF-8"/> 
+  <meta name="description" content="pentesting denial of service attack Jolocorp Cybersecurity"/> 
+  <title>Technical documentation Page</title>  
+  <link href="hacking101.css" rel="stylesheet"/>  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet"/> 
+    </head>  
+
+    <body>
+      <H1>Hacking stuff</H1>
+  <header>Table of Contents
+  <nav>
+    <ul>
+      <li><a href="#nmap">NMAP</a></li> 
+      <li><a href="#nmap engine">NMAP Engine</a></li>
+      <li><a href="#hydra">HYDRA</a></li>
+      <li><a href="#metasploit">Metasploit</a></li>
+      <li><a href="#denial attack">DOS Attack</a></li>
+      <li><a href="#wifi hacking">Wifi Hacking</a></li>         
+    </ul> 
+  <nav> 
+  </header> 
+
+
+
+  <main id="main-doc">
+
+
+<section id="nmap" class="main-section">
+  <h2 id="nmap">NMAP</h2>
+    <p>##Nmap sends SYN packet from the TCP 3-way handshake and waits for SYN-ACK reply but never completes handshake afterwards. used for network reconnaissance, vulnerability assessment, and security auditing. Nmap –6 ##tells to use IPv6 
+<h3> port types:</h3>
+ <ul>
+      <li>Open ports:port where service is actively listening and can be targeted </li> 
+      <li>Filtered ports:Nmap could not determine if they are open or closed. may be behind firewall or have security measures. </li>
+      <li>Closed ports: ports where no service is listening, and they are not a potential attack vector. </li>  
+    </ul> 
+
+    </p>
+</section>
+<section id="nmap engine" class="main-section">
+  <h2 id="nmap engine">NMAP Engine</h2>
+    <p>Nmap Scripting engine(NSE) <a href= "https://nmap.org/book/nse.html">(official Link)</a>
+Scripts are written in LUA programming language. 
+<ul>
+  <li>Structure run all scripts in category: nmap [Scan Options] --script=<script_name> <target> </li>
+  <li>Example of use: nmap -p 80 --script=http-title example.com </li>
+  <li>Example of 2 categories: nmap -p 80 --script=smb-enum-users,smb-enum-shares example.com </li>
+</ul>
+</p>
+
+</div>
+<div class="hydra">
+  <h2 id="hydra">HYDRA</h2>
+    <p>Hydra is used for password hacking mainly for brute force attacks 
+    <ul>
+    <li>fast online password cracking tool,  </li>
+    <li>can perform rapid dictionary attacks against more than 50 Protocols, including Telnet, RDP, SSH, FTP, HTTP, HTTPS, SMB. </li>
+    <li> USAGE: hydra -t 4 -l dale -P /usr/share/wordlists/rockyou.txt -vV 10.10.10.6 ftp</li>
+    </ul>
+    </p>
+</section>
+
+
+
+<section id="metasploit" class="main-section">
+  <h2 id="metasploit">Metasploit</h2>
+    <p>Definitions:</p>
+
+<p>Exploit: piece of code that uses a vulnerability present on the target system</p> 
+
+<p>Vulnerability: flaw of the system in code design or logic flow</p>
+
+<p>Payload: more specific only code that you want to execute on target software </p>
+
+<h4>Basic info:</h4> 
+<ul>
+<li>Location: /opt</li> 
+
+<li>two versions:</li> 
+<ul>  
+<li>Pro costs lot (graphical user interface)</li>  
+<li>Free Open source – works from commapnd line msfconsole(metasploit for console)</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="denial attack" class="main-section">
+  <h2 id="denial attack">DOS Attack</h2>
+    <h3>There are 5 main tools to conduct DOS attack</h3>
+    <ol>
+      <li>LOIC (Low Orbit Ion Cannon)</li>
+      <li>HOIC (High Orbit Ion Cannon)</li>
+      <li>HULK denial of service engine</li>
+      <li>ByteDOS newer developed in 2021</li>
+      <li>Pyloris -- HTTP DOS TOOL</li>
+      </ol>
+    
+      <h3>2 Teqnicues for DOS attack</h3>
+    <ol>
+      <li>Slow LORIS</li>
+      <li>Rudy are you dead yet.</li>
+      </ol>
+</section>
+
+<section id="wifi hacking" class="main-section">
+  <h2 id="wifi hacking">Wifi Hacking</h2>
+<h3>basic terms and explanations:</h3>
+
+<ul>  
+<li>SSID , Network Name</li>  
+
+<li>ESSID , Network name for multiple routers</li>  
+
+<li>BSSID , access point's (router's) MAC adress</li>  
+
+<li>WPA2-PSK , normal wifi where you provide password</li>  
+
+<li>WPA-EAP , needs Username & Password that is sent to Radius server. Radius server is server for authenticating  clients not just for wifi(like in hotel)</li>
+</ul>
+</section>
+
+
+</main>  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Footer> 
+    <address></address>  
+    Jolocorp Adress: unknown<br /> 
+    You do not need to reach us. We will reach YOU!<br /> 
+    </Footer> 
+    </body>
+</html> 
