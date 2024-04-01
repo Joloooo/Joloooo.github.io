@@ -1,0 +1,79 @@
+* { 
+    box-sizing: border-box;
+    margin:0; 
+    } 
+    
+    
+    header{      
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    padding:0;
+    margin:0px;
+    background-color:gray;
+    color:white;
+    width: 70em;
+    margin:auto;
+      
+    }
+    
+
+
+
+    #image {
+      min-width:10%;
+      height:auto;
+      max-width:100%;
+      width:30em;
+    
+    
+    }
+    
+    #linkedin{
+      width:10em;
+    }
+      
+    
+    
+    #img-div{
+      display:flex;
+      Justify-content:center;
+    }
+    
+    #tribute-info{
+      border: 1px;
+      margin:auto;
+      padding:2em;
+      max-width:70em;
+    }
+    
+    .ausbildung{
+    margin:0;
+    padding:0;
+    margin-bottom:15px
+    }
+    
+    .ausbildung>li, .ausbildung>li>ul>li{
+      display:flex;
+      Justify-content:space-between;
+    }
+    
+    
+    
+    
+    .placetime{
+      display:flex;
+      Justify-content:space-between;
+    }
+    
+    
+    footer{
+      display:flex;
+      Justify-content:center;
+      background-color:gray;
+      color:white;
+    }
+    
+    li{
+      list-style-type: "-"
+    }
