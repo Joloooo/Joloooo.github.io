@@ -3,6 +3,7 @@
     margin:0; 
     } 
     
+  
     
     header{      
     display:flex;
@@ -12,7 +13,7 @@
     margin:0px;
     background-color:gray;
     color:white;
-    width: 70em;
+    width: 70%;
     margin:auto;
       
     }
@@ -77,3 +78,25 @@
     li{
       list-style-type: "-"
     }
+
+
+    @media (min-width: 0) and (max-width: 1500px){
+  
+      *{
+        font-size:0.9rem;
+      }
+         
+         body, header{
+           margin-left: 2.5rem;
+           margin-right: 2.5em;
+           
+           
+         }
+         #navbar{
+           width:5rem;
+           font-size:0.6rem;
+           overflow-wrap: break-word;
+           padding-left: 10px;
+           
+         }
+      }
