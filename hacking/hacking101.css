@@ -1,7 +1,8 @@
 * { 
   box-sizing: border-box; 
   padding:0;
-  margin:0;  
+  margin:0;
+  overflow-wrap: break-word;  
   } 
   
   
@@ -12,7 +13,7 @@
   font-size:1.8em;
   padding:-4vw;
   margin:0;
-  margin-top:4em;
+  margin-top:2em;
   text-align :center;
   
   }
@@ -43,9 +44,9 @@
     width:30vw;
     left:0;
     top:0;
-    height:0.5vh;
+    
     background:rgba(255, 255, 255, 0.4);
-    height:100vh;
+    height:140vh;
     border-right:5px solid black;
     
     
@@ -88,6 +89,8 @@
   h1 {
     background:rgba(0, 0, 0, 0.8);
     color:white;
+    font-size:xx-large;
+  
   }
   
   
@@ -121,19 +124,44 @@
   
   
   
-  @media (min-width: 500px) and (max-width: 1000px){
+  @media (min-width: 0px) and (max-width: 625px){
   
   *{
-    font-size:0.4em;
+    font-size:0.9rem;
   }
      
      body{
-       width:300px;
+       margin-left: 2.5rem;
+       margin-right: 2.5em;
        
        
      }
      #navbar{
-       width:100px;
+       width:5rem;
+       font-size:0.6rem;
+       overflow-wrap: break-word;
+       padding-left: 10px;
        
      }
   }
+
+  @media (min-width: 625px) and (max-width: 1500px){
+  
+    *{
+      font-size:0.9rem;
+    }
+       
+       body{
+         margin-left: 2.5rem;
+         margin-right: 2.5em;
+         
+         
+       }
+       #navbar{
+         width:5rem;
+         font-size:0.6rem;
+         overflow-wrap: break-word;
+         padding-left: 10px;
+         
+       }
+    }
