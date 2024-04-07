@@ -27,6 +27,7 @@ body{
   font-size:1.5rem;
   align-items:center;
   justify-content: space-between; 
+  z-index:3;
 }
 
 
@@ -56,10 +57,87 @@ body{
   
 }
 
+/*watch stufff*/
+#watch{
+  background-color:blue;
+  border:4px solid black;
+  width:15em;
+  height:15em;
+  position:absolute;
+  left:40%;
+  top:16%;
+  border-radius:100%;
+  }
+  
+  .timer{
+  background-color:white;
+  width:4px;
+  height:50%;
+  position:absolute;
+  top:0%;
+  left:50%;
+  transform-origin: 40% 100%;
+  animation: rotation 3600s linear infinite;
+  }
+  
+  #minute_stick{
+      background-color:white;
+      width:0.5px;
+      height:50%;
+      position:absolute;
+      top:0%;
+      left:50%;
+      transform-origin: 40% 100%;
+      animation: rotation 3600s linear infinite;
+      animation: rotation 60s linear infinite;
+  }
+  @keyframes rotation{ 
+      0%{
+          transform: rotate(0deg);
+      }
+      100%{
+          transform: rotate(360deg);
+      }
+  }
+  
+  .hour_numbers{
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      color:white;
+  }
+  
+  
+  
+  #three{
+    top: 35%;
+    left: 90%;
+  }
+  
+  #six{
+    top: 78%;
+    left: 46%;
+  }
+  
+  
+  #nine{
+    top: 35%;
+    left: 6%;
+  }
+  
+  
+  #twelve{
+    top: -6%;
+    left: 46%;
+  }
+  
+/*watch stuff ends*/
+
 
 
 /*email submit shit*/
 #signup{
+  padding-top: 10em;;
   display:flex;
   flex-direction: column;
   align-items:center;
