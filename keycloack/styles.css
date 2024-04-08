@@ -8,48 +8,101 @@
 
 
 body{
-  background-color:black;
+  background-color:#303841;
   color:white;
   margin-left:1%;  
   
 }
 
-/*navigation menu*/
-
-#header{  
-  background-color:brown;  
-  display:flex; 
-  position:fixed;   
+  /*website main header*/
+#navbar{
+  position:fixed;  
   top:0;
   left:0;
-  width:98vw;
-  padding:0 2vw;
-  font-size:1.5rem;
-  align-items:center;
-  justify-content: space-between; 
-  z-index:3;
+  height:10vh;  
+  width:100vw;
+  background-color:black;
+  display:flex; 
+  Justify-content: space-evenly;
+  Align-items: center;
+  color:white;
+  Font-weight:bold;
+  font-size:4vh;
+ 
+}
+
+#portfolio_name{
+  text-align:center;
+  font-size:7vh;
+  }
+
+#navbar p a:hover{
+    background-color:white;
+    color:black;  
+    cursor: pointer;
+
+    
 }
 
 
-#nav-bar{
-  margin-left:5em;  
+#navbar #links{
   display:grid;
-  grid-template-columns:minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content);
-  grid-auto-flow:column;
-  padding-right:3vw;
-  column-gap:2rem;
-  color:silver;  
+  grid-template-columns:repeat(5, minmax( min-content, max-content));
+  column-gap:0.5em;
+  Justify-content: space-between;
+}
+
+#navbar p a{  
+  text-decoration: none; 
+  color:white;
+  Font-weight:bold;
+  padding:0.5em 0;
+}
+
+
+/*keycloack navigation menu*/
+
+#nav-bar{  
+  position:fixed;   
+  top:10vh;
+  left:0;
+  width:19vw;
+  height:100vh;
+  background-color:brown;  
+  display:flex;
+  flex-direction: column;   
+  align-items:left;
+  padding-left: 1vw;
+  z-index:3;
+  color:silver;
+  font-size:1.5rem;
   
-  align-items:center;
+}
+
+
+#nav-bar a{
+  padding-bottom:5vh;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#nav-bar a:hover{
+    background-color:white;
+    color:black;  
+    cursor: pointer;
 
 }
 
 .nav-link{
   color:white;
+  text-decoration: none; 
 }
 
 #header-img{
-  width: 15%;
+  width: 20vw;  
+  padding-bottom: 10vh;
+  margin-left: -.5em;
+  
   
   
   
@@ -64,8 +117,8 @@ body{
   width:15em;
   height:15em;
   position:absolute;
-  left:40%;
-  top:16%;
+  left:50%;
+  top:15%;
   border-radius:100%;
   }
   
@@ -179,6 +232,15 @@ font-size:1rem;
   width:40vw;
   background-color:silver;
 }
+
+main{
+  width:88%;
+  margin-left:11%;
+  margin-top: 15%;
+}
+
+
+
 
 /*first column*/
 .feat{
@@ -296,6 +358,25 @@ grid-column:1/2;
   height: 40vh;  
 }
 
+
+
+  
+Footer{
+
+  right:0vw;
+  background-color:black;
+  color:white;
+  font-size:1.2em;
+  margin-top:25px; 
+  padding-top:1vh;    
+    height:10vh;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;    
+    font-weight:bold;
+    padding-left:0.5em;
+  }
 
 
 @media (max-width: 768px) { 

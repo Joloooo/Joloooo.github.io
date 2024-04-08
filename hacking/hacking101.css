@@ -6,6 +6,60 @@
   } 
   
   
+
+
+
+  /*website main header*/
+  
+ 
+
+  #navbar{
+    position:fixed;  
+    top:0;
+    left:0;
+    height:10vh;  
+    width:100vw;
+    background-color:black;
+    display:flex; 
+    Justify-content: space-evenly;
+    Align-items: center;
+    color:white;
+    Font-weight:bold;
+    font-size:4vh;
+   
+  }
+  
+  #portfolio_name{
+    text-align:center;
+    font-size:7vh;
+    }
+  
+  #navbar p a:hover{
+      background-color:white;
+      color:black;  
+      cursor: pointer;
+  
+      
+  }
+  
+  
+  #navbar #links{
+    display:grid;
+    grid-template-columns:repeat(5, minmax( min-content, max-content));
+    column-gap:0.5em;
+    Justify-content: space-between;
+  }
+  
+  #navbar p a{  
+    text-decoration: none; 
+    color:white;
+    Font-weight:bold;
+    padding:0.5em 0;
+  }
+
+/*website main header*/
+
+
   
   header:not(.basiani){
   background: rgba(0, 0, 128, 0.4);
@@ -38,12 +92,12 @@
   }
   
   
-  #navbar{
+  #hacking_navbar{
     position:fixed;
     max-width:250px;
     width:30vw;
     left:0;
-    top:0;
+    top:10vh;
     
     background:rgba(255, 255, 255, 0.4);
     height:140vh;
@@ -53,21 +107,38 @@
   }
   
   
-  #navbar li{
+  #hacking_navbar li{
     max-width:100%;
     font-size:1.5em;
     padding-top:2em;
     border-bottom:4px solid silver;
     z-index:99;
-    Opacity:1;
+    Opacity:1;  
+  }
+  
+
+  #hacking_navbar li:hover{
+    background-color:black;     
+    cursor: pointer;
+
+  }
+
+
+  #hacking_navbar li:hover a{    
+    color:white;  
     
-  
+
   }
-  
-  #navbar li a {
+
+
+  #hacking_navbar li a {
   color:black;
+  text-decoration: none;
   }
   
+/*website official navbar ends*/
+
+
   section>ul, ol, section>ol, ol>li, section>ul>li{
     padding-left:20
   
@@ -113,13 +184,20 @@
   Footer{
   position:absolute;
   left: 0;
-  right:1vw;
+  right:0vw;
   background-color:black;
   color:white;
   font-size:1.5em;
-  margin-top:25px 
-  } 
-  
+  margin-top:25px;
+  padding-top:1vh;
+    height:10vh;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;    
+    font-weight:bold;
+    padding-left:0.5em;
+  }
   
   
   
@@ -136,7 +214,7 @@
        
        
      }
-     #navbar{
+     #hacking_navbar{
        width:5rem;
        font-size:0.6rem;
        overflow-wrap: break-word;
@@ -145,7 +223,7 @@
      }
   }
 
-  @media (min-width: 625px) and (max-width: 1500px){
+  @media (min-width: 625px) and (max-width: 800px){
   
     *{
       font-size:0.9rem;
@@ -157,7 +235,7 @@
          
          
        }
-       #navbar{
+       #hacking_navbar{
          width:5rem;
          font-size:0.6rem;
          overflow-wrap: break-word;
@@ -165,3 +243,28 @@
          
        }
     }
+
+
+    @media (min-width: 625px) and (max-width: 1300px){
+  
+      *{
+        font-size:0.9rem;
+      }
+         
+         body{
+           margin-left: 2.5rem;
+           margin-right: 2.5em;
+           
+           
+         }
+         #hacking_navbar, #hacking_navbar li a{
+           width:20%;
+           font-size:1rem;
+           overflow-wrap: break-word;
+           padding-left: 10px;
+           padding-top:0;
+
+
+           
+         }
+      }
