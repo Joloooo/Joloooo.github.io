@@ -8,7 +8,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .content {
@@ -33,7 +32,6 @@ h1 {
 p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    
 }
 
 .buttons {
@@ -41,6 +39,37 @@ p {
     justify-content: space-around;
     margin: 40px 0;
     padding-top: 10vh;
+    gap: 20px; /* Added gap between divs */
+}
+
+.path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+}
+
+.path:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.8); /* Decreased transparency on hover */
+}
+
+.beginner {
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 2px solid green;
+}
+
+.adventurer {
+    background-color: rgba(255, 255, 0, 0.2);
+    border: 2px solid yellow;
+}
+
+.advanced {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 2px solid red;
 }
 
 button {
@@ -51,12 +80,19 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 20%;
+    width: 100%;
     min-width: 150px;
 }
 
 button:hover {
-    background-color: red;
+    background-color: darkgreen;
+}
+
+.path p {
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
 }
 
 /* Media Queries for Responsiveness */
@@ -74,6 +110,10 @@ button:hover {
         padding: 15px;
         width: 40%;
     }
+
+    .path p {
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -89,5 +129,9 @@ button:hover {
         font-size: 1em;
         padding: 10px;
         width: 45%;
+    }
+
+    .path p {
+        font-size: 0.8em;
     }
 }
