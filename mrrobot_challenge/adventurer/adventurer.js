@@ -47,11 +47,11 @@ document.getElementById('q2-hint').addEventListener('click', function() {
 });
 
 document.getElementById('q3-hint').addEventListener('click', function() {
-    showHint('q3', 'Check out OWASP for more information.');
+    showHint('q3', 'Check out https://www.fortinet.com/resources/cyberglossary/brute-force-attack for more information.');
 });
 
 document.getElementById('q4-hint').addEventListener('click', function() {
-    showHint('q4', 'Check out OWASP for more information.');
+    showHint('q4', 'You can do this on your own! We believe in you!');
 });
 
 document.getElementById('q5-hint').addEventListener('click', function() {
@@ -116,6 +116,50 @@ document.getElementById('step4-submit').addEventListener('click', function() {
 
 document.getElementById('step5-submit').addEventListener('click', function() {
     validateInput(5, 'princess');
+});
+
+document.getElementById('step1-hint').addEventListener('click', function() {
+    showHint('step1', 'Try using a common password list.');
+});
+
+document.getElementById('step2-hint').addEventListener('click', function() {
+    showHint('step2', 'Consider common names.');
+});
+
+document.getElementById('step3-hint').addEventListener('click', function() {
+    showHint('step3', 'Think of common words people use.');
+});
+
+document.getElementById('step4-hint').addEventListener('click', function() {
+    showHint('step4', 'Use hash cracking tools.');
+});
+
+document.getElementById('step5-hint').addEventListener('click', function() {
+    showHint('step5', 'Try a personal touch.');
+});
+
+document.getElementById('q1-submit').addEventListener('click', function() {
+    showApprovedAnswer('q1', 'Brute force attacks exploit weak passwords and systems without proper security measures, such as account lockouts, CAPTCHAs, or rate limiting. They systematically try all possible combinations to find the correct password.');
+});
+
+document.getElementById('q2-submit').addEventListener('click', function() {
+    showApprovedAnswer('q2', 'A brute force tool targets login forms and authentication endpoints, such as database authentication servers, and the backend server handling authentication logic and user sessions.');
+});
+
+document.getElementById('q3-submit').addEventListener('click', function() {
+    showApprovedAnswer('q3', 'The main types of brute force attacks include simple brute force attacks, dictionary attacks, hybrid brute force attacks, reverse brute force attacks, and credential stuffing.');
+});
+
+document.getElementById('q4-submit').addEventListener('click', function() {
+    showApprovedAnswer('q4', 'Burp Suite und OWASP ZAP');
+});
+
+document.getElementById('q5-submit').addEventListener('click', function() {
+    showApprovedAnswer('q5', 'Wordlists.');
+});
+
+document.getElementById('q6-submit').addEventListener('click', function() {
+    showApprovedAnswer('q6', 'Rate limiting, account lockout policies.');
 });
 
 document.getElementById('q7-submit').addEventListener('click', function() {
