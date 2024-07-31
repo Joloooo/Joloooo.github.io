@@ -1,0 +1,461 @@
+
+/* Reset default margins and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url('georgia.webp');
+    background-size: cover; /* Ensure the full image is visible */
+    
+    background-position: center; /* Center the image */    
+    height: 90vh; /* Ensure the body takes up the full height of the viewport */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: 1; /* Place the overlay above the background image */
+}
+
+
+h1, .dynamicDiv, #additiondiv, #resultDiv {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #ffffff; /* White color for visibility */
+    font-size: 2.5em;
+    margin-top: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
+
+
+
+
+#mainDiv {
+    display: flex;
+    flex-direction: row; /* Keep the row direction */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    height: auto; /* Let the container grow based on its content */
+    overflow-y: auto; /* Enable scroll if necessary */
+}
+
+.dynamicDiv {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    width:30em;
+    padding: 1.5em;
+    margin: 1em 1em; /* Center the div horizontally */
+    border: 2px solid #d40000; /* Red border matching the flag */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    color: #000; /* Black color for text */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.partyInput{
+    margin-left:49px;
+}
+
+
+
+#partyLabel{
+    margin-bottom: 10px;;
+}
+
+#additiondiv{
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    width:30em;        
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin: 0em 1em; /* Center the div horizontally */
+    border: 2px solid #d40000; /* Red border matching the flag */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    color: #000; /* Black color for text */
+    text-align: center;    
+    cursor:pointer;
+}
+
+
+#additiondiv:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow for depth effect */
+}
+
+#additiondiv:active {
+    transform: scale(0.95); /* Slightly decrease size to simulate button press */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Revert shadow */
+}
+
+.dynamicDiv label {
+    color: #d40000; /* Red color matching the flag */
+    font-size:1.1em;
+    Font-weight:800;
+
+}
+
+.dynamicDiv input {    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+
+
+
+
+/* results div is here */
+
+#resultsHead{
+text-align: center;
+font-size:2em;
+}
+
+.mainDescrcolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Adjust based on the number of columns */
+    gap: 10px; /* Optional: space between columns */
+    width: 100%; /* Make sure the container takes up the full width */
+    text-align: center; /* Center the text within each grid cell */
+    
+}
+
+/* Apply grid layout to the content rows */
+.descrcolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Same column structure as header */
+    gap: 10px; /* Optional: space between columns */
+    width: 100%; /* Make sure the container takes up the full width */
+    align-items: center; /* Center items vertically */
+    text-align: center; /* Center the text within each grid cell */
+}
+
+#resultDescription {
+    max-width: 800px; /* Adjust to fit your needs */
+    margin: 0; /* Center the grid within the available space */
+
+}
+
+
+.descrcolumn span{
+    font-size: 1.5em;
+}
+
+
+#resultDiv {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    min-width:50em;
+    max-height:fit-content;
+    padding: 0em 1.5em;
+    margin: 1em 2em; /* Center the div horizontally */
+    border: 2px solid #d40000; /* Red border matching the flag */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    color: #000; /* Black color for text */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for the semicircle container */
+.semicircle-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    overflow: visible; /* Ensure no cropping */
+}
+
+
+
+/* Style for the tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 10px;
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+    font-size: 1.5em; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+}
+
+
+
+
+/* Style for the "ENG" link */
+#page-translation {
+    position: absolute; /* Positions the element relative to its nearest positioned ancestor */
+    top: 10px; /* Distance from the top of the page */
+    left: 84%; /* Distance from the left of the page */
+    background-color: white; /* White background for the button */
+    color: black; /* Black text color */
+    padding: 5px 10px; /* Padding around the text to create a button-like appearance */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 15px; /* Small font size */
+    text-decoration: none; /* Remove underline from the link */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    z-index: 1000; /* Ensures it appears on top of other elements */
+    font-family: Arial, sans-serif; /* Use a clean, readable font */
+}
+
+#page-translation:hover {
+    background-color: #f0f0f0; /* Slightly change background color on hover */
+}
+
+
+
+
+
+
+
+/* For screens 1200px and smaller */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .dynamicDiv, #additiondiv, #resultDiv {
+        width: 25em;
+        padding: 1.5em;
+    }
+
+    .dynamicDiv {
+        margin: 1.5em;
+    }
+
+    #additiondiv {
+        margin: 1.5em;
+    }
+
+    #resultDiv {
+        min-width: 40em;
+        margin: 1.5em;
+    }
+
+    .descrcolumn span {
+        font-size: 1.3em;
+    }
+
+    .partyInput {
+        margin-left: 0px;
+    }
+
+    #partyLabel, #percentLabel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* For screens 992px and smaller */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .dynamicDiv, #additiondiv, #resultDiv {
+        width: 20em;
+        padding: 1em;
+    }
+
+    .dynamicDiv {
+        margin: 1em;
+    }
+
+    #additiondiv {
+        margin: 1em;
+    }
+
+    #resultDiv {
+        min-width: 35em;
+        margin: 1em;
+    }
+
+    .descrcolumn span {
+        font-size: 1.1em;
+    }
+
+    .partyInput {
+        margin-left: 0px;
+    }
+
+    #partyLabel, #percentLabel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* For screens 768px and smaller */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .dynamicDiv, #additiondiv, #resultDiv {
+        width: 18em;
+        padding: 0.8em;
+    }
+
+    .dynamicDiv {
+        margin: 0.8em;
+    }
+
+    #additiondiv {
+        margin: 0.8em;
+    }
+
+    #resultDiv {
+        min-width: 30em;
+        margin: 0.8em;
+    }
+
+    .descrcolumn span {
+        font-size: 1em;
+    }
+
+    .partyInput {
+        margin-left: 0px;
+    }
+
+    #partyLabel, #percentLabel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* For screens 576px and smaller */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .dynamicDiv, #additiondiv, #resultDiv {
+        width: 15em;
+        padding: 0.5em;
+    }
+
+    .dynamicDiv {
+        margin: 0.5em;
+    }
+
+    #additiondiv {
+        margin: 0.5em;
+    }
+
+    #resultDiv {
+        min-width: 100%; /* Allow the resultDiv to take full width */
+        margin: 0.5em;
+    }
+
+    .descrcolumn span {
+        font-size: 0.9em;
+    }
+
+    .partyInput {
+        margin-left: 0px;
+    }
+
+    #partyLabel, #percentLabel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* For screens 480px and smaller (mobile) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    #mainDiv {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items in the column */
+        padding: 1em;
+    }
+
+    .dynamicDiv, #additiondiv, #resultDiv {
+        width: 90%; /* Allow the divs to take most of the screen width */
+        padding: 0.5em;
+    }
+
+    .dynamicDiv {
+        margin: 0.5em 0;
+    }
+
+    #additiondiv {
+        margin: 0.5em 0;
+    }
+
+    #resultDiv {
+        width: 100%; /* Take full width on mobile */
+        margin: 0.5em 0;
+    }
+
+    .descrcolumn span {
+        font-size: 0.8em;
+    }
+
+    svg {
+        width: 100%; /* Ensure SVG scales properly */
+    }
+
+    /* Adjust partyLabel and percentLabel */
+    #partyLabel, #percentLabel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .partyInput {
+        margin-left: 0px;
+    }
+}
