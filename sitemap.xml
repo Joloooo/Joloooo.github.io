@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://joloooo.github.io/</loc>
+  <lastmod>2024-08-01T22:09:46+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://joloooo.github.io/me/me.html</loc>
+  <lastmod>2024-08-01T22:09:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joloooo.github.io/electoralCalculator/electoral.html</loc>
+  <lastmod>2024-08-01T22:09:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joloooo.github.io/mrrobot_challenge/mrrobot_challenge.html</loc>
+  <lastmod>2024-08-01T22:09:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joloooo.github.io/keycloack/keycloack.html</loc>
+  <lastmod>2024-08-01T22:09:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joloooo.github.io/hacking/hacking101.html</loc>
+  <lastmod>2024-08-01T22:09:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joloooo.github.io/survey/survey.html</loc>
+  <lastmod>2024-08-01T22:09:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joloooo.github.io/electoralCalculator/electoralgeo.html</loc>
+  <lastmod>2024-08-01T22:09:45+00:00</lastmod>
+  <priority>0.94</priority>
+</url>
+
+
+</urlset>
