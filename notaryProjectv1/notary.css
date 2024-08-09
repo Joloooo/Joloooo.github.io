@@ -1,0 +1,235 @@
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+
+
+.hidden {
+    display: none;
+  }
+
+
+body{
+    
+    background-color: #e8ebef
+}
+
+#navigationMenu{
+    background-color: black;
+    color:white;
+    height:fit-content;    
+    display: grid;
+    grid-template-columns: 0.4fr 3fr 0.1fr 0.1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    margin-bottom: 1vw;   
+}
+
+#navigationMenu p {
+color:white;
+padding:10px 1vw;
+font-size: 1.2vw;
+text-align: center;
+}
+
+.languageBar{
+    padding:0vw;
+}
+
+#navigationMenu p:hover{
+    color:black;
+    cursor:pointer;
+    background-color: white;
+}
+
+#searchContainer{
+    display:flex;
+    padding: 0.3vw;   
+}
+
+#searchIcon{
+    padding-top:0.7vh;
+    font-size:1.3vw;
+    background-color: white;
+    color:black;    
+}
+
+
+#searchBar{
+    font-size: 1.5vw;    
+    width:100%;    
+}
+
+#searchBar:focus {
+    outline: none; /* Ensures no outline appears on focus */
+
+}
+
+
+#bureauIco{
+    height:2vw;
+    padding: 0.2vw 2vw;
+    
+}
+
+#firstRow{
+    grid-column:1/6;
+    align-items: center;
+    display:flex;
+        
+}
+
+
+
+
+.roundbox{
+    background-color: white;
+    width:50vw;
+    margin:auto;
+    margin-bottom:1vw;
+    text-align: center;
+    font-size: 0.9vw;
+    padding:1vw;
+    border-radius:15px ;
+}
+
+.textbox{
+    background-color: white;
+    width:50vw;
+    margin:auto;
+    margin-bottom:1vw;    
+    font-size: 0.9vw;
+    padding:1vw;
+    border-radius:15px ;
+}
+
+.textbox h2{
+    text-align: center;
+}
+
+.textbox h3, .textbox h2{
+    padding: 1vw;
+    
+}
+
+.textbox h3, .textbox ol li{
+    margin-left: 1vw;
+}
+
+.roundbox:hover{
+    background-color: black;
+    color:white;
+    cursor:pointer;
+}
+
+
+
+
+#contact {    
+    margin:auto;
+    margin-top: 5vw;
+    background-color: white;
+    display:flex;
+    width:min-content;
+       
+}
+
+#contact i span{
+ font-weight: normal;
+ padding-left:1vw;
+}
+
+#textContact{
+    width:min-content;
+    
+}
+
+#contact i, #contact h2  {    
+    margin: 1vw; /* Add some space between each <i> element */
+    display:flex;
+}
+
+
+#contactImage{
+    width:40VW;
+    padding: 20px;
+}
+
+
+#contact.hidden {
+    display: none;
+}
+
+  /* Extra Small screens (Phones) */
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 4vw; /* Maximum font size increase */
+    }
+  
+    #bureauIco{
+        height:5vw;
+        padding: 0.2vw 2vw;
+    }        
+
+     h2 {
+      font-size: 4.5vw; /* Maximum font size increase */
+    }
+  
+    h3 {
+      font-size: 3.5vw; /* Maximum font size increase */
+    }
+  
+    #navigationMenu {
+      grid-template-columns: 1fr; /* Stack menu items vertically */
+      text-align: center;
+    }
+  
+    #navigationMenu p {
+      font-size: 4vw; /* Adjust menu font size for small screens */
+      padding: 10px 1vw;
+    }
+  
+    #searchContainer {
+      justify-content: center;
+      height:70%;
+      margin-top:4%;
+    }
+  
+    #searchBar {
+      font-size: 3.5vw;
+    
+    }
+
+    #searchIcon{
+    font-size: 4.5vw;
+    }
+
+  
+    .roundbox, .textbox {
+      width: 90vw; /* Adjust box width for phones */
+      font-size: 4.5vw;
+      margin-bottom: 2.5vw;
+      margin-top:2.5vw;
+      
+    }
+  
+    .menuDropdownContent {
+      top: 8vw; /* Adjust dropdown position */
+    }
+  
+    #contact {
+      width: 95vw; /* Make contact section more compact */
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #contactImage {
+      width: 90vw; /* Adjust contact image width */
+      padding: 10px;
+    }
+  }
+  
+
+
+
