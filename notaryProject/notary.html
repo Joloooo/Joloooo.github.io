@@ -12,6 +12,16 @@
     <meta property="og:image" content="icon.ico" />
     <link href="notary.css" rel="stylesheet"/> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "DkDzsgry6J4fnQBFI",
+      });
+   })();
+</script>    
 </head> 
 
 <body> 
@@ -31,9 +41,6 @@
     </header>
 
     <main></main> <!-- Main content will be dynamically populated by JavaScript -->
-
-    <!-- EmailJS SDK Integration -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script  type="module" src="jsFiles/notary.js"></script>   
 </body>
 </html>

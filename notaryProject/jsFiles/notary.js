@@ -1,10 +1,4 @@
 
-
-// Initialize EmailJS SDK
-(function () {
-  emailjs.init("DkDzsgry6J4fnQBFI");
-})();
-
 import servicesData from './data.js'
 
 
@@ -107,7 +101,18 @@ function renderMainServices() {
       renderRegistrationForm(subservice);
     });
   }
-  // Function to render the registration form
+
+
+
+
+
+
+
+
+
+
+
+
 // Function to render the registration form
 function renderRegistrationForm(subservice) {
   const main = document.querySelector("main");
@@ -124,62 +129,116 @@ function renderRegistrationForm(subservice) {
   // Add list items with input fields from the registration data
   subservice.registration.formFields.forEach((field, index) => {
     if (field.elementType === "input") {
-      // Render input fields
-      formHTML += `
-        <li>${field.label}: <input type="${field.type}" id="input-${index}" name="input-${index}" required></li>
-      `;
+      console.log(`Rendering input field with ID: input-${index}`); // Debug statement
+      formHTML += `<li>${field.label}: <input type="${field.type}" id="input-${index}" name="input-${index}" required></li>`;
     } else if (field.elementType === "h3") {
-      // Render h3 heading
       formHTML += `<h3>${field.label}</h3>`;
     } else if (field.elementType === "h4") {
-      // Render h4 heading
       formHTML += `<h4>${field.label}</h4>`;
     }
   });
 
   formHTML += `
         </ol>
-        <button type="submit">ონლაინ რეგისტრაციის დასრულება</button>
+        <button id="finalSubmit" type="submit">ონლაინ რეგისტრაციის დასრულება</button>
       </form>
     </div>
   `;
 
   main.innerHTML = formHTML;
 
-  // Add event listener for form submission
+  // Attach the event listener for the "finalSubmit" button
   document.querySelector("#registrationForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    sendEmail(subservice.name, subservice.registration.formFields);
+    event.preventDefault(); // Prevent default form submission behavior
+    sendEmail(subservice.name, subservice.registration.formFields);    
   });
 }
-  
-// Function to send email using EmailJS
+
+
+
+
+// Updated sendEmail function to handle non-input elements
 function sendEmail(subserviceName, formFields) {
-  const subject = subserviceName;
-  let message = "";
+  console.log("Form Fields Data:", formFields); // Log formFields for debugging
+  let message = ""; // Initialize an empty message string
+  let missingField = false; // Flag to track missing fields
 
-  // Collect data from input fields based on registration form fields
+  // Collect data from all input fields in the form
   formFields.forEach((field, index) => {
-      const userInput = document.querySelector(`#input-${index}`).value;
-      message += `${field.label}: ${userInput}\n`;
+    // Skip non-input elements (h3, h4, etc.)
+    if (field.elementType !== "input") {
+      return; // Continue to the next element
+    }
+
+    const userInputElement = document.querySelector(`#input-${index}`);
+
+    // Check if the input element exists
+    if (userInputElement) {
+      const userInput = userInputElement.value;
+      message += `${field.label}: ${userInput}\n`; // Build the message string
+    } else {
+      console.error(`Input element with ID #input-${index} not found. Expected label: ${field.label}`);
+      missingField = true; // Set flag if an input element is missing
+    }
   });
 
-  emailjs
-      .send("service_mqrn02q", "template_ID", {
-          subject: subject,
-          message: message,
-      })
-      .then((response) => {
-          alert("Registration sent successfully!");
-          console.log("Email sent:", response.status, response.text);
-      })
-      .catch((error) => {
-          alert("An error occurred while sending registration.");
-          console.error("Email sending error:", error);
-      });
+  // If any field was missing, alert the user and stop the function
+  if (missingField) {
+    alert("One or more fields are missing or incorrectly rendered. Please try again.");
+    return;
+  }
+
+  // Check if the message has content
+  if (message.trim() === "") {
+    alert("Form is incomplete. Please fill in all required fields.");
+    return;
+  }
+
+  // Log the message to ensure it is constructed correctly
+  console.log("Message to be sent:", message);
+
+  // Send the email using EmailJS
+  emailjs.send("service_mqrn02q", "template_ho8b34i", {
+    message: message, // Pass the entire message
+    to_name: subserviceName // Adjust this if you have more template variables
+  })
+  .then((response) => {
+    alert("რეგისტრაცია დასრულდა წარმატებით");
+    console.log("Email sent:", response.status, response.text);
+  })
+  .catch((error) => {
+    console.error("სამწუხაროდ სისტემური პრობლემაა. ბოდიშს გიხდით დისკომფორტისთვის", error);
+    alert("Failed to send registration. Please try again later.");
+  });
 }
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Event listeners for menu navigation

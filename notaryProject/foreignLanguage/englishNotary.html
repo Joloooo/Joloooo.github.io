@@ -1,228 +1,44 @@
-<!DOCTYPE html> 
-
+<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Notary Bureau, Notary, Notary Bureau Mzia Arsenashvili"/>
+    <title>Notary</title>
+    <link rel="icon" href="../images/icon.ico" type="image/x-icon">
+    <meta name="description" content="Description of services of Notary Bureau">
+    <meta property="og:title" content="Notary Bureau" />
+    <meta property="og:description" content="Notary Bureau" />
+    <meta property="og:image" content="icon.ico" />
+    <link href="../notary.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "DkDzsgry6J4fnQBFI",
+            });
+        })();
+    </script>
+</head>
 
-<head> 
-<meta name=viewport content="width=device-width, initial-scale=1.0"/>
-<meta charset="UTF-8"/>
-<meta name="description" content="Notary Bureau, notary, Notary Mzia Arsenashvili, Notary, Notary Bureau"/>
-<title>Notary</title> 
-<link rel="icon" href="images/icon.ico" type="image/x-icon">
-<meta name="description" content="Description of services of Notary Bureau">
-<meta property="og:title" content="notary bureau" />
-<meta property="og:description" content="notary bureau" />
-<meta property="og:image" content="icon.ico" />
-<link href="notary.css" rel="stylesheet"/> 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
-</head> 
+<body>
+    <header id="navigationMenu">
+        <div id="firstRow">
+            <img id="bureauIco" src="../images/icon.ico">
+            <h1>Notary Bureau - Notary Mzia Arsenashvili</h1>
+        </div>
+        <p id="servicesNav">Services</p>
+        <div id="searchContainer">
+            <i id="searchIcon" class="fas fa-search"></i>
+            <input id="searchBar" type="text" placeholder="Search">
+        </div>
+        <a class="languageBar" id="georgian" href='../index.html'>KA</a>
+        <a class="languageBar" id="russian" href='russianNotary.html'>RU</a>     
+        <p id="contactNav">Contact</p>
+    </header>
 
-<body> 
-
-<header id="navigationMenu">
-    <div id="firstRow">
-    <img id="bureauIco" src="images/icon.ico">
-    <h1>Notary Bureau Notary Mzia Arsenashvili</h1>
-    </div>
-    <p id="servicesNav">Services</p>
-    <div id="searchContainer">
-        <i id="searchIcon" class="fas fa-search"></i>
-        <input id="searchBar" type="text" placeholder="Search">
-    </div>
-    <a class="languageBar" id="english" href='notary.html'>GE</a> 
-    <a class="languageBar" id="russian" href='russianNotary.html'>RU</a>     
-    <p id="contactNav">Contact</p>
-</header>
-
-
-<main>
-<p id="powerOfAttorney" class="service roundbox selector">Power of Attorney</p>
-<p id="onlinePowerOfAttorney" class="service roundbox selector">E-Power of Attorney (Power of Attorney via Skype, Messenger, WhatsApp, etc.)</p>
-<p class="service roundbox selector">Rent</p>
-<p class="service roundbox selector">Sale</p>
-<p class="service roundbox selector">Translation</p>
-<p class="service roundbox selector">Signature Authentication</p>
-<p class="service roundbox selector">Inheritance</p>
-<p class="service roundbox selector">Debt Recognition</p>
-<p class="service roundbox selector">Issuance of an Executory Document</p>
-<p class="service roundbox selector">Copy Certification</p>
-   
-<!--power of attorney subbbuttons-->
-<p id="declaredPowerOfAttorney" class="service subservice powerOfAttorney roundbox selector hidden">Power of Attorney for a Declared Vehicle or Motorcycle</p>
-<p id="undeclaredPowerOfAttorney" class="service subservice powerOfAttorney roundbox selector hidden">Power of Attorney for an Undeclared Vehicle or Motorcycle</p>
-<p id="realEstatePowerOfAttorney" class="service subservice powerOfAttorney roundbox selector hidden">Real Estate Power of Attorney</p>
-<p id="lawyerPowerOfAttorney" class="service subservice powerOfAttorney roundbox selector hidden">Power of Attorney for a Lawyer</p>
-
-<p id="bankPowerOfAttorney" class="service subservice powerOfAttorney roundbox selector hidden">Power of Attorney for the Bank</p>
-<!-- electronic power of attorney subbbuttons-->
-<p id="declaredPowerOfElectronicAttorney" class="service subservice onlinePowerOfAttorney roundbox selector hidden">Online Power of Attorney for a Declared Vehicle or Motorcycle</p>
-<p id="undeclaredPowerOfElectronicAttorney" class="service subservice onlinePowerOfAttorney roundbox selector hidden">Online Power of Attorney for an Undeclared Vehicle or Motorcycle</p>
-<p id="realEstatePowerOfElectronicAttorney" class="service subservice onlinePowerOfAttorney roundbox selector hidden">Online Real Estate Power of Attorney</p>
-<p id="lawyerPowerOfElectronicAttorney" class="service subservice onlinePowerOfAttorney roundbox selector hidden">Online Power of Attorney for a Lawyer</p>
-<p id="bankPowerOfElectronicAttorney" class="service subservice onlinePowerOfAttorney roundbox selector hidden">Online Power of Attorney for the Bank</p>
-<!-- rent subbbuttons-->
-
-<!-- power of attorney text -->
-<div id="declaredPowerOfAttorneyText" class="service subservice textbox hidden">
-    <h2>Power of Attorney for a Declared Vehicle</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Vehicle's technical passport (must not be expired)</li> 
-        <li> The presence of the grantee is not required</li>  
-        </ol>
-        <h3>Contract Value: 25 GEL</h3>        
-</div>
-
-<div id="undeclaredPowerOfAttorneyText" class="service subservice textbox hidden">
-    <h2>Power of Attorney for an Undeclared Vehicle</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Contract or other document confirming that the vehicle belongs to the grantor</li> 
-        <li> The presence of the grantee is not required</li>  
-        </ol>
-        <h3>Contract Value: 25 GEL</h3>        
-</div>
-
-<div id="realEstatePowerOfAttorneyText" class="service subservice textbox hidden">
-    <h2>Real Estate Power of Attorney</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li>The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Real estate cadastral code, where the grantor is listed as the owner</li> 
-        <li> The presence of the grantee is not required</li>  
-        </ol>
-        <h3>Contract Value: 25 GEL</h3>        
-</div>
-
-<div id="lawyerPowerOfAttorneyText" class="service subservice textbox hidden">
-    <h2>Power of Attorney for a Lawyer</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li>The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>The grantor must know the lawyer's details: personal ID number, first name, last name</li> 
-        <li> The lawyer's presence is not required</li>  
-        </ol>
-        <h3>Contract Value: 25 GEL</h3>        
-</div>
-
-<div id="bankPowerOfAttorneyText" class="service subservice textbox hidden">
-    <h2>Power of Attorney for the Bank</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Bank details</li> 
-        <li>The grantor must fully understand each right they are granting to the bank. If the person does not understand the rights being granted and is requesting the power of attorney using a bank template without understanding, the power of attorney will not be issued.</li>  
-        </ol>
-        <h3>Contract Value: 25 GEL</h3>        
-</div>
-
-<!-- electronic power of attorney text -->
-<div id="declaredPowerOfElectronicAttorneyText" class="service subservice textbox hidden">
-    <h2>Online Power of Attorney for a Declared Vehicle</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Vehicle's technical passport (must not be expired)</li> 
-        <li> Two witnesses must come to the notary office, who
-            <ol> 
-            <li>Personally know the grantor</li>
-            <li>At least one of the witnesses must not be a relative of the grantor</li> 
-            <li>Both witnesses must have a valid ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the witness)</li>  
-            </ol></li>
-        <li> The presence of the grantee is not required</li>      
-        </ol>
-        
-        <h3>Contract Value: 65 GEL</h3>        
-</div>
-
-<div id="undeclaredPowerOfElectronicAttorneyText" class="service subservice textbox hidden">
-    <h2>Online Power of Attorney for an Undeclared Vehicle or Motorcycle</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Contract or other document confirming that the vehicle belongs to the grantor</li> 
-        <li> Two witnesses must come to the notary office, who
-        <ol> 
-            <li>Personally know the grantor</li>
-            <li>At least one of the witnesses must not be a relative of the grantor</li> 
-            <li>Both witnesses must have a valid ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the witness)</li>  
-            </ol></li>
-        <li> The presence of the grantee is not required</li>      
-        </ol>
-        
-        <h3>Contract Value: 65 GEL</h3>          
-</div>
-
-<div id="realEstatePowerOfElectronicAttorneyText" class="service subservice textbox hidden">
-    <h2>Online Real Estate Power of Attorney</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Real estate cadastral code, where the grantor is listed as the owner</li> 
-        <li> Two witnesses must come to the notary office, who
-        <ol> 
-            <li>Personally know the grantor</li>
-            <li>At least one of the witnesses must not be a relative of the grantor</li> 
-            <li>Both witnesses must have a valid ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the witness)</li>  
-            </ol></li>
-        <li> The presence of the grantee is not required</li>      
-        </ol>
-        
-        <h3>Contract Value: 65 GEL</h3>        
-</div>
-
-
-<div id="lawyerPowerOfElectronicAttorneyText" class="service subservice textbox hidden">
-    <h2>Online Power of Attorney for a Lawyer</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>The grantor must know the lawyer's details: personal ID number, first name, last name</li> 
-        <li>Two witnesses must come to the notary office, who
-        <ol> 
-            <li>Personally know the grantor</li>
-            <li>At least one of the witnesses must not be a relative of the grantor</li> 
-            <li>Both witnesses must have a valid ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the witness)</li>  
-            </ol></li>
-        <li>The lawyer's presence is not required</li>      
-        </ol>
-        
-        <h3>Contract Value: 65 GEL</h3>         
-</div>
-
-
-
-<div id="bankPowerOfElectronicAttorneyText" class="service subservice textbox hidden">
-    <h2>Online Power of Attorney for the Bank</h2>
-    <h3>Documents Required for the Contract:</h3>
-    <ol> 
-        <li> The grantor's ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the grantor)</li>
-        <li>Vehicle's technical passport (must not be expired)</li> 
-        <li> Two witnesses must come to the notary office, who
-        <ol> 
-            <li>Personally know the grantor</li>
-            <li>At least one of the witnesses must not be a relative of the grantor</li> 
-            <li>Both witnesses must have a valid ID card, driver's license, or passport (must not be expired, and the person in the photo must resemble the witness)</li>  
-            </ol></li>
-            <li>The grantor must fully understand each right they are granting to the bank. If the person does not understand the rights being granted and is requesting the power of attorney using a bank template without understanding, the power of attorney will not be issued.</li>      
-        </ol>
-        
-        <h3>Contract Value: 65 GEL</h3>           
-</div>
-</main>
-
-
-<div  id="contact" class="hidden">
-    <div  id="textContactDiv">
-    <h2>Contact Us During Business Hours</h2>
-    <i class="fa fa-phone" aria-hidden="true"><span>+995-551-178-118</span></i>
-    <i class="fa fa-envelope" aria-hidden="true"><span>mziaanaarsenashvili@gmail.com</span></i>
-    <i class="fa fa-location-arrow" aria-hidden="true"><span>Vazha-Pshavela N90 (between Vazha-Pshavela and University Metro, next to Shua-Kalaki restaurant)</span></i> </div>
-    <a href='https://www.google.com/maps/place/%E1%83%A1%E1%83%90%E1%83%9C%E1%83%9D%E1%83%A2%E1%83%90%E1%83%A0%E1%83%9D+%E1%83%91%E1%83%98%E1%83%A3%E1%83%A0%E1%83%9D+%E1%83%9C%E1%83%9D%E1%83%A2%E1%83%90%E1%83%A0%E1%83%98%E1%83%A3%E1%83%A1%E1%83%98+%E1%83%9B%E1%83%96%E1%83%98%E1%83%90+%E1%83%90%E1%83%A0%E1%83%A1%E1%83%94%E1%83%9C%E1%83%90%E1%83%A8%E1%83%95%E1%83%98%E1%83%9A%E1%83%98/@41.7231662,44.7227097,17z/data=!3m1!4b1!4m6!3m5!1s0x4044734a881e52d3:0x31775f7fd3910322!8m2!3d41.7231622!4d44.7252846!16s%2Fg%2F11rc1z2520?entry=ttu' ><img  id="contactImage" src="contact_screen.png" alt="location"></a>
-</div>
-    <script src="notary.js"></script>
-        
- </body>
-        
+    <main></main> <!-- Main content will be dynamically populated by JavaScript -->
+    <script type="module" src="../jsFiles/notary.js"></script>   
+</body>
 </html>
