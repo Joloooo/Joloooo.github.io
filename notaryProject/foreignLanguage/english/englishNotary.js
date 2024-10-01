@@ -1,4 +1,4 @@
-import servicesData from './data.js'
+import servicesDataEnglish from './englishData.js';
 
 // Function to update URL
 function updateURL(queryString) {
@@ -6,7 +6,7 @@ function updateURL(queryString) {
   history.pushState({ path: newURL }, '', newURL);
 }
 
-///// Function to handle URL query parameters
+// Function to handle URL query parameters
 function handleQueryParameters() {
   const params = new URLSearchParams(window.location.search);
   const serviceId = params.get('service');
@@ -14,7 +14,7 @@ function handleQueryParameters() {
   const action = params.get('action');
 
   if (serviceId) {
-    const selectedService = servicesData.find(service => service.id === serviceId);
+    const selectedService = servicesDataEnglish.find(service => service.id === serviceId);
     if (selectedService) {
       if (subserviceId) {
         const selectedSubservice = selectedService.subservices.find(subservice => subservice.id === subserviceId);
@@ -44,58 +44,54 @@ handleQueryParameters();
 
 // Function to render main services
 function renderMainServices() {
-    const main = document.querySelector("main");
-    main.innerHTML = ""; 
-  
-    servicesData.forEach((service) => {
-      const serviceElement = document.createElement("p");
-      serviceElement.classList.add("service", "roundbox", "selector");
-      serviceElement.textContent = service.name;
-      serviceElement.addEventListener("click", () => {
-        updateURL(`service=${service.id}`);
-        renderSubservices(service);
-      });
-      main.appendChild(serviceElement);
+  const main = document.querySelector("main");
+  main.innerHTML = ""; 
+
+  servicesDataEnglish.forEach((service) => {
+    const serviceElement = document.createElement("p");
+    serviceElement.classList.add("service", "roundbox", "selector");
+    serviceElement.textContent = service.name;
+    serviceElement.addEventListener("click", () => {
+      updateURL(`service=${service.id}`);
+      renderSubservices(service);
     });
-  }
-  
-  // Function to render subservices
-  function renderSubservices(service) {
-    const main = document.querySelector("main");
-    main.innerHTML = "";
-  
-    service.subservices.forEach((subservice) => {
-      const subserviceElement = document.createElement("p");
-      subserviceElement.classList.add("subservice", "roundbox", "selector");
-      subserviceElement.textContent = subservice.name;
-      subserviceElement.addEventListener("click", () => {
-        updateURL(`service=${service.id}&subservice=${subservice.id}`);
-        renderDescription(subservice);
-      });
-      main.appendChild(subserviceElement);
+    main.appendChild(serviceElement);
+  });
+}
+
+// Function to render subservices
+function renderSubservices(service) {
+  const main = document.querySelector("main");
+  main.innerHTML = "";
+
+  service.subservices.forEach((subservice) => {
+    const subserviceElement = document.createElement("p");
+    subserviceElement.classList.add("subservice", "roundbox", "selector");
+    subserviceElement.textContent = subservice.name;
+    subserviceElement.addEventListener("click", () => {
+      updateURL(`service=${service.id}&subservice=${subservice.id}`);
+      renderDescription(subservice);
     });
-  }
-  
-  // Function to render descriptions with the 'Online Registration' button
-  function renderDescription(subservice) {
-    const main = document.querySelector("main");
-    main.innerHTML = `
-      <div class="textbox">
-        ${subservice.description}
-        <button id="onlineRegistration">ონლაინ რეგისტრაცია</button>
-      </div>
-    `;
-  
-    // Add event listener for the "Online Registration" button
-    document.querySelector("#onlineRegistration").addEventListener("click", () => {
-      updateURL(`service=${subservice.serviceId}&subservice=${subservice.id}&action=registration`);
-      renderRegistrationForm(subservice);
-    });
-  }
+    main.appendChild(subserviceElement);
+  });
+}
 
+// Function to render descriptions with the 'Online Registration' button
+function renderDescription(subservice) {
+  const main = document.querySelector("main");
+  main.innerHTML = `
+    <div class="textbox">
+      ${subservice.description}
+      <button id="onlineRegistration">Online Registration</button>
+    </div>
+  `;
 
-
-
+  // Add event listener for the "Online Registration" button
+  document.querySelector("#onlineRegistration").addEventListener("click", () => {
+    updateURL(`service=${subservice.serviceId}&subservice=${subservice.id}&action=registration`);
+    renderRegistrationForm(subservice);
+  });
+}
 
 // Function to render the registration form
 function renderRegistrationForm(subservice) {
@@ -104,7 +100,7 @@ function renderRegistrationForm(subservice) {
   // Wrap the form content in a single div
   let formHTML = `
     <div id="registrationContainer">
-      <h2>ონლაინ რეგისტრაცია</h2>
+      <h2>Online Registration</h2>
       <h3>${subservice.name}</h3>
       <form id="registrationForm">
         <ol>
@@ -124,7 +120,7 @@ function renderRegistrationForm(subservice) {
 
   formHTML += `
         </ol>
-        <button id="finalSubmit" type="submit">ონლაინ რეგისტრაციის დასრულება</button>
+        <button id="finalSubmit" type="submit">Complete Online Registration</button>
       </form>
     </div>
   `;
@@ -137,9 +133,6 @@ function renderRegistrationForm(subservice) {
     sendEmail(subservice.name, subservice.registration.formFields);    
   });
 }
-
-
-
 
 // Updated sendEmail function to handle non-input elements
 function sendEmail(subserviceName, formFields) {
@@ -187,16 +180,14 @@ function sendEmail(subserviceName, formFields) {
     to_name: subserviceName // Adjust this if you have more template variables
   })
   .then((response) => {
-    alert("რეგისტრაცია დასრულდა წარმატებით");
+    alert("Registration completed successfully");
     console.log("Email sent:", response.status, response.text);
   })
   .catch((error) => {
-    console.error("სამწუხაროდ სისტემური პრობლემაა. ბოდიშს გიხდით დისკომფორტისთვის", error);
+    console.error("System error, sorry for the inconvenience", error);
     alert("Failed to send registration. Please try again later.");
   });
 }
-
-
 
 // Event listeners for menu navigation
 const contactNav = document.querySelector("#contactNav");
@@ -218,15 +209,15 @@ function showContactInfo() {
     main.innerHTML = `
         <div id="contact">
             <div id="textContactDiv">
-                <h2>დაგვიკავშირდით სამუშაო საათებში</h2>
+                <h2>Contact us during working hours</h2>
                 <i class="fa fa-phone" aria-hidden="true"><span>+995-551-178-118</span></i>
                 <i class="fa fa-envelope" aria-hidden="true"><span>mziaanaarsenashvili@gmail.com</span></i>
-                <i class="fa fa-location-arrow" aria-hidden="true"><span>ვაჟა ფშაველას N90 (ვაჟა ფშაველას და უნივერსიტეტის მეტროს შორის. რესტორან შუა-ქალაქის გვერდით)</span></i> 
+                <i class="fa fa-location-arrow" aria-hidden="true"><span>Vaja Pshavela N90 (Between Vaja Pshavela and University metro stations. Next to the Shua-Kalaki restaurant)</span></i> 
             </div>
-            <a href='https://www.google.com/maps/place/...'><img id="contactImage" src="images/contact_screen.png" alt="location"></a>
+            <a href='https://www.google.com/maps/place/...'><img id="contactImage" src="../../images/contact_screen.png" alt="location"></a>
         </div>`;
 }
 
 ////////////// imported searchbar
-import * as searchBarModule from './searchBar.js';
-searchBarModule.setupSearchBarListener(searchBar, servicesData, renderMainServices, renderSubservices, renderDescription);
+import * as searchBarModule from '../../jsFiles/searchBar.js';
+searchBarModule.setupSearchBarListener(searchBar, servicesDataEnglish, renderMainServices, renderSubservices, renderDescription);

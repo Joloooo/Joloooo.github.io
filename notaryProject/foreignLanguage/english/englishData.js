@@ -104,7 +104,7 @@ const servicesDataEnglish = [
             <h3>Documents required for the agreement:</h3>
             <ol>
                 <li>ID card, driver's license, or passport of the grantor</li>
-                <li>The grantor must know the lawyer’s personal details: ID number, first name, last name</li> 
+                <li>The grantor must know the lawyer's personal details: ID number, first name, last name</li> 
                 <li>The lawyer's presence is not required</li>  
             </ol>
             <h3>Agreement cost: 25 GEL</h3>`,
@@ -136,7 +136,7 @@ const servicesDataEnglish = [
             <h3>Documents required for the agreement:</h3>
             <ol> 
                 <li>The grantor must have their ID card, driver's license, or passport on hand during the call (must be valid)</li>
-                <li>Vehicle’s technical passport</li> 
+                <li>Vehicle's technical passport</li> 
                 <li>Two witnesses must come to the notary office, one of whom should not be a relative of the grantor</li>
                 <li>Both witnesses must present a valid ID card</li>                 
                 <li>The grantor must provide the names of the witnesses during the call. Otherwise, the Power of Attorney cannot be processed.</li>
@@ -261,7 +261,7 @@ const servicesDataEnglish = [
                 <h3>Documents required for the agreement:</h3>
                 <ol> 
                     <li>The grantor's ID card, driver's license, or passport</li>
-                    <li>The lawyer’s details: personal ID number, first name, last name</li> 
+                    <li>The lawyer's details: personal ID number, first name, last name</li> 
                     <li>At least two witnesses must come to the notary office</li>  
                 </ol>
                 <h3>Agreement cost: 65 GEL</h3>`,
@@ -297,7 +297,7 @@ const servicesDataEnglish = [
                 <h3>Documents required for the agreement:</h3>
                 <ol> 
                     <li>The grantor's ID card, driver's license, or passport</li>
-                    <li>The bank’s details</li> 
+                    <li>The bank's details</li> 
                     <li>At least two witnesses must come to the notary office</li>  
                 </ol>
                 <h3>Agreement cost: 65 GEL</h3>`,
@@ -510,10 +510,10 @@ const servicesDataEnglish = [
             description: `<h2>Inheritance Issuance within 6 Months after Death</h2>
                         <h3>Documents required for inheritance:</h3>
               <ol>
-                  <li>Death certificate – issued by the Public Service Hall</li>
+                  <li>Death certificate - issued by the Public Service Hall</li>
                   <li>Document proving kinship: (e.g., the decedent's marriage certificate, birth certificate indicating parents) – issued by the Public Service Hall</li>
-                  <li>Information card (confirming the decedent's property in Georgia) – issued by the Public Service Hall</li>
-                  <li>Certificate regarding the presence or absence of a will – issued by the Public Service Hall</li>
+                  <li>Information card (confirming the decedent's property in Georgia) - issued by the Public Service Hall</li>
+                  <li>Certificate regarding the presence or absence of a will - issued by the Public Service Hall</li>
               </ol>
               <h3>After 6 months from the person's death, the notary will issue an inheritance certificate, which allows the transfer of the decedent's property.</h3>
               <h3>The agreement cost depends on the property's value:</h3>
@@ -552,10 +552,10 @@ const servicesDataEnglish = [
               <p>In the absence of these circumstances, the notary issues a certificate of refusal for inheritance, which must be presented to a court to restore the inheritance period.</p>
               <h3>After restoring the period, the following documents must be presented:</h3>          
               <ol>
-                  <li>Death certificate – issued by the Public Service Hall</li>
-                  <li>Document proving kinship: (e.g., the decedent's marriage certificate, birth certificate indicating parents) – issued by the Public Service Hall</li>
-                  <li>Information card (confirming the decedent's property in Georgia) – issued by the Public Service Hall</li>
-                  <li>Certificate regarding the presence or absence of a will – issued by the Public Service Hall</li>
+                  <li>Death certificate - issued by the Public Service Hall</li>
+                  <li>Document proving kinship: (e.g., the decedent's marriage certificate, birth certificate indicating parents) - issued by the Public Service Hall</li>
+                  <li>Information card (confirming the decedent's property in Georgia) - issued by the Public Service Hall</li>
+                  <li>Certificate regarding the presence or absence of a will - issued by the Public Service Hall</li>
               </ol>
               <h3>After 6 months from the person's death, the notary will issue an inheritance certificate, which allows the transfer of the decedent's property.</h3>
               <h3>The agreement cost depends on the property's value:</h3>
@@ -583,87 +583,6 @@ const servicesDataEnglish = [
             registration: {
               formFields: [
                 { elementType: "h4", label: "Registration for inheritance is not possible online; please visit the notary office in person." }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        id: "debtRecognition",
-        name: "Debt Recognition and Enforcement Sheet Issuance",
-        subservices: [
-          {
-            id: "debtAgreement",
-            name: "Debt Recognition Agreement",
-            description: `<h2>Debt Recognition Agreement</h2>
-              <p>If a person owes you money, you can formalize a debt recognition agreement with a notary.</p>   
-              <p>Advantages of the debt recognition agreement:</p>   
-              <p>If the debtor does not repay the debt within the specified period, you do not need to go to court. The notary will issue an enforcement sheet, allowing the debtor's property to be seized and sold.</p> 
-              <h3>Documents required to conclude the agreement:</h3>
-              <ol>
-                <li>Both creditor and debtor must appear in person with valid ID</li>
-                <li>The fee is determined by the debt amount according to the law</li>
-              </ol>
-              <table border="1" cellspacing="0" cellpadding="5">
-                <thead>
-                  <tr>
-                    <th>№</th>
-                    <th>Transaction Value</th>
-                    <th>Fee Amount in GEL (percentage of transaction value)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>1</td><td>Up to 500 GEL</td><td>3%</td></tr>
-                  <tr><td>2</td><td>501 to 1,000 GEL</td><td>15 GEL + 2.5% for the amount over 500 GEL</td></tr>
-                  <tr><td>3</td><td>1,001 to 2,000 GEL</td><td>27.5 GEL + 1.5% for the amount over 1,000 GEL</td></tr>
-                  <tr><td>4</td><td>2,001 to 3,000 GEL</td><td>42.5 GEL + 1% for the amount over 2,000 GEL</td></tr>
-                  <tr><td>5</td><td>3,001 to 5,000 GEL</td><td>52.5 GEL + 0.5% for the amount over 3,000 GEL</td></tr>
-                  <tr><td>6</td><td>5,001 to 20,000 GEL</td><td>62.5 GEL + 0.4% for the amount over 5,000 GEL</td></tr>
-                  <tr><td>7</td><td>20,001 to 100,000 GEL</td><td>122.5 GEL + 0.3% for the amount over 20,000 GEL</td></tr>
-                  <tr><td>8</td><td>100,001 to 500,000 GEL</td><td>362.5 GEL + 0.2% for the amount over 100,000 GEL</td></tr>
-                  <tr><td>9</td><td>500,001 to 1,000,000 GEL</td><td>1,162.5 GEL + 0.1% for the amount over 500,000 GEL</td></tr>
-                  <tr><td>10</td><td>Over 1,000,000 GEL</td><td>1,662.5 GEL + 0.05% for the amount over 1,000,000 GEL</td></tr>
-                </tbody>
-              </table>`,
-            registration: {
-              formFields: [
-                { elementType: "h4", label: "Creditor Information" },
-                { elementType: "input", label: "First name, Last name", type: "text" },
-                { elementType: "input", label: "Current address", type: "text" },
-                { elementType: "input", label: "Personal ID number or passport number", type: "text" },
-                { elementType: "input", label: "Date of birth", type: "date" },
-                { elementType: "h4", label: "Debtor Information" },
-                { elementType: "input", label: "First name, Last name", type: "text" },
-                { elementType: "input", label: "Personal ID number or passport number", type: "text" },
-                { elementType: "input", label: "Date of birth", type: "date" },
-                { elementType: "h4", label: "Debt Amount Information" },
-                { elementType: "input", label: "Information about debt repayment", type: "text" }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        id: "copyCertification",
-        name: "Copy Certification",
-        subservices: [
-          {
-            id: "certifyCopy",
-            name: "Document Copy Certification",
-            description: `<h2>Document Copy Certification</h2>
-              <h3>Information:</h3>
-              <p>The notary does not verify the authenticity of the document but only certifies that the copy corresponds to the original document presented.</p>
-              <p>Cost: 4 GEL per certified page</p>`,
-            registration: {
-              formFields: [
-                { elementType: "h4", label: "Information about the person requesting the certified copy" },
-                { elementType: "input", label: "First name, Last name", type: "text" },
-                { elementType: "input", label: "Current address", type: "text" },
-                { elementType: "input", label: "Personal ID number or passport number", type: "text" },
-                { elementType: "input", label: "Date of birth", type: "date" },
-                { elementType: "h4", label: "Document Information" },
-                { elementType: "input", label: "How many copies of the document would you like to be certified?", type: "text" },
-                { elementType: "input", label: "Upload the document", type: "file" }
               ]
             }
           }
@@ -739,9 +658,32 @@ const servicesDataEnglish = [
             }
           }
         ]
-      }
-      
+      },
+      {
+        id: "copyCertification",
+        name: "Copy Certification",
+        subservices: [
+          {
+            id: "certifyCopy",
+            name: "Document Copy Certification",
+            description: `<h2>Document Copy Certification</h2>
+              <p>The notary does not verify the authenticity of the document but only certifies that the copy corresponds to the original document presented.</p>
+              <p>Cost: 4 GEL per certified page</p>`,
+            registration: {
+              formFields: [
+                { elementType: "h4", label: "Information about the person requesting the certified copy" },
+                { elementType: "input", label: "First name, Last name", type: "text" },
+                { elementType: "input", label: "Current address", type: "text" },
+                { elementType: "input", label: "Personal ID number or passport number", type: "text" },
+                { elementType: "input", label: "Date of birth", type: "date" },
+                { elementType: "h4", label: "Document Information" },
+                { elementType: "input", label: "How many copies of the document would you like to be certified?", type: "text" },
+                { elementType: "input", label: "Upload the document", type: "file" }
+              ]
+            }
+          }
+        ]
+      }      
 ];
 
-
-export default servicesData;
+export default servicesDataEnglish;
