@@ -4,6 +4,7 @@ body {
     background-color: #ffffff; /* White background color */
     color: #333333; /* Dark grey text color */
     font-family: Arial, sans-serif;
+    
 }
 
 .top-bar {
@@ -135,4 +136,33 @@ button {
 
 .info-div p, .info-div ul {
     color: #333333; /* Dark grey text color */
+}
+
+
+
+
+
+/* Hide the text and only show the arrow on smaller screens */
+@media (max-width: 720px) {
+    .back-link {
+        display: inline-flex; /* Ensures the link remains visible */
+        align-items: center; /* Centers the arrow vertically */
+        color: white; /* Maintain the arrow color */
+    }
+
+    .back-link::before {
+        content: "←"; /* Display the arrow */
+        font-size: 1.5em; /* Adjust size of the arrow */
+        display: inline-block; /* Ensure the arrow is visible */
+    }
+
+    .back-link span {
+        display: none; /* Hide the "Back to Main Page" text */
+    }
+
+    .top-bar{
+        font-size: 5.5vw;   
+        
+        
+    }
 }

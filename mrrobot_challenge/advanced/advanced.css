@@ -117,3 +117,30 @@ button {
 .hint:hover .hint-text {
     display: block;
 }
+
+
+
+/* Hide the text and only show the arrow on smaller screens */
+@media (max-width: 720px) {
+    .back-link {
+        display: inline-flex; /* Ensures the link remains visible */
+        align-items: center; /* Centers the arrow vertically */
+        color: white; /* Maintain the arrow color */
+    }
+
+    .back-link::before {
+        content: "←"; /* Display the arrow */
+        font-size: 1.5em; /* Adjust size of the arrow */
+        display: inline-block; /* Ensure the arrow is visible */
+    }
+
+    .back-link span {
+        display: none; /* Hide the "Back to Main Page" text */
+    }
+
+    .top-bar{
+        font-size: 5.5vw;   
+        
+        
+    }
+}

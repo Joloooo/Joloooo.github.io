@@ -108,12 +108,25 @@ button:hover {
     button {
         font-size: 1.2em;
         padding: 15px;
-        width: 40%;
+ 
     }
 
     .path p {
         font-size: 0.9em;
     }
+
+    .buttons {
+        flex-direction: column;
+    }
+    
+        .path{
+            width:70vw;
+            align-items: center;
+        }
+
+
+
+
 }
 
 @media (max-width: 480px) {
@@ -128,10 +141,20 @@ button:hover {
     button {
         font-size: 1em;
         padding: 10px;
-        width: 45%;
+        width: 90%;
     }
 
     .path p {
-        font-size: 0.8em;
+        font-size: 0.8em;        
     }
+
+    .buttons {
+    flex-direction: column;
+    }
+
+    .path{
+        width:70vw;
+        align-items: center;
+    }
+
 }
