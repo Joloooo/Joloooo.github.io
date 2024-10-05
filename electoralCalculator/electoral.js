@@ -30,7 +30,28 @@ const getTotalSum = () => {
   return totalSum;
 };
 
-// Function to mirror the seats calculation for all dynamic elements
+
+
+
+const updateSeats = () => {
+  let totalSeats = 0; // Declare totalSeats locally within the function
+  const elements = document.querySelectorAll('.totalSeats');
+  
+  elements.forEach(element => {
+    const value = parseFloat(element.innerText); // Use innerText to get the value from <span>
+    if (!isNaN(value)) {
+      totalSeats += value; // Sum up the total seats
+    }
+  });
+  
+  return totalSeats;
+};
+
+
+
+
+
+
 const mirrorSeats = () => {
   updateSum(); // Ensure totalSum is updated before calculating
 
@@ -50,18 +71,95 @@ const mirrorSeats = () => {
         totalSeats.innerText = "Didn't cross the 5% threshold";
         gainedSeats.innerText = "Didn't cross the 5% threshold";
       } else if (totalSum > 0 && percentValue > 0) {
-        const seatNumberValue = (percentValue * 150 / 100).toFixed(2);
-        const totalSeatsValue = (percentValue * 150 / totalSum).toFixed(2);
+        const seatNumberValue = Math.floor((percentValue * 150 / 100).toFixed(2));
+        const totalSeatsValue = Math.floor((percentValue * 150 / totalSum).toFixed(2));
 
         seatNumber.innerText = seatNumberValue;
         totalSeats.innerText = totalSeatsValue;
 
         // Calculate gained seats based on the difference between seatNumber and totalSeats
-        gainedSeats.innerText = (parseFloat(totalSeatsValue) - parseFloat(seatNumberValue)).toFixed(2);
+        gainedSeats.innerText = (parseFloat(totalSeatsValue) - parseFloat(seatNumberValue));
       }
     }
   });
+
+  // Call updateSeats after the calculations to get the updated total seats
+  const total = updateSeats();
+
+  distributeExtraSeats();
 };
+
+
+
+
+
+
+
+const distributeExtraSeats = () => {
+  let totalSeats = updateSeats();  // Get the current total seats after mirrorSeats
+  let extraSeats = 150 - totalSeats;  // Calculate the number of extra seats
+
+  if (extraSeats <= 0 || totalSeats==0) {
+    return;  // No extra seats to distribute
+  }
+
+  const seatFractions = [];  // To store fractional values and their index
+  const totalSeatsElements = document.querySelectorAll('.totalSeats');  // Select all totalSeats elements
+
+  totalSeatsElements.forEach((element, index) => {
+    const totalSeatsValue = parseFloat(element.textContent);  // Get the total seats value
+    const fraction = totalSeatsValue - Math.floor(totalSeatsValue);  // Get the fractional part
+
+    seatFractions.push({ index, fraction });
+  });
+
+  // Sort parties based on the fractional part in descending order
+  seatFractions.sort((a, b) => b.fraction - a.fraction);
+
+  // Distribute the extra seats to parties with the highest fractional parts
+  let i = 0;
+  while (extraSeats > 0 && i < seatFractions.length) {
+    const partyIndex = seatFractions[i].index;
+    const totalSeatsElement = totalSeatsElements[partyIndex];
+    const currentSeats = parseFloat(totalSeatsElement.textContent);
+    
+    // Increase the total seats for the current party by 1
+    totalSeatsElement.textContent = (currentSeats + 1);  // Update the element's textContent
+
+    extraSeats--;  // Reduce the number of extra seats
+    i++;  // Move to the next party with the highest fractional part
+  }
+
+  // Log the updated total seats after extra seat distribution
+  const finalTotalSeats = updateSeats();
+  console.log('Final total seats after distributing extra seats:', finalTotalSeats);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Function to remove the dynamic element if inputs are empty
 const removeDynamicElement = (partyInput, percentInput, dynamicElement, resultElement) => {
@@ -160,7 +258,6 @@ const setupInitialDataAttributes = () => {
 // Initial calculation in case there's already input values
 mirrorSeats();
 
-console.log('Initial total sum:', getTotalSum()); // Log the initial totalSum
 
 // Function to generate semicircle based on totalCircles
 const generateSemicircle = (totalCircles) => {
