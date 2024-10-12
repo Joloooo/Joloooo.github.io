@@ -218,6 +218,6 @@ function showContactInfo() {
         </div>`;
 }
 
-////////////// imported searchbar
+////////////// Импортированный поисковый бар
 import * as searchBarModule from '../../jsFiles/searchBar.js';
-searchBarModule.setupSearchBarListener(searchBar, servicesDataEnglish, renderMainServices, renderSubservices, renderDescription);
+searchBarModule.setupSearchBarListener(searchBar, servicesData, renderMainServices, renderSubservices, renderDescription);
