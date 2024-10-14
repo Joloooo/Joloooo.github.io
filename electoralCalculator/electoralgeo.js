@@ -24,7 +24,7 @@ const updateSum = () => {
   const inputs = document.querySelectorAll('.percentInput');
   inputs.forEach(input => {
     const value = parseFloat(input.value);
-    if (!isNaN(value) && value > 5) {
+    if (!isNaN(value) && value >= 5) {
       totalSum += value;
     }
   });
