@@ -16,7 +16,6 @@
 
   body {  
     margin-top:5em;
-    background-image:url(https://www.hp.com/us-en/shop/app/assets/images/uploads/prod/5%20Best%20Coding%20Programs%20for%20Aspiring%20Programmers1650304687858345.jpg); 
     background-size:cover;
     background-repeat: no-repeat;
     background-position:center center;
@@ -24,9 +23,21 @@
     color:white;
     font-size:1.2em;
     position: center;
-    z-index: -1;
-    
+    z-index: -1;    
     } 
+
+    .hacked_video {
+      width: 100vw;
+      height: 100vh;
+      position: fixed; /* Ensure video stays fixed */
+      top: 0;
+      left: 0;
+      z-index: -1; /* Keep the video behind other content */
+      object-fit: cover; /* Ensures the video covers the background proportionally */
+      object-position: center; /* Centers the video content */
+    }
+
+
   
   main{
     margin-top: 8rem;
@@ -57,7 +68,8 @@
     width:13em;
     height:1.5em;
     font-size:30px;
-    background-color:green
+    background-color:green;
+    text-align: center
   }
   
    
