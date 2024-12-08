@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evil Corp Login</title>
+    <link rel="stylesheet" href="./login.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-functions.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyACP4MVlUBqsR486qCuYawjGrvt3jFm_n8",
+        authDomain: "mrrobot-1d1d4.firebaseapp.com",
+        projectId: "mrrobot-1d1d4",
+        storageBucket: "mrrobot-1d1d4.appspot.com",
+        messagingSenderId: "840868372314",
+        appId: "1:840868372314:web:790c8e8d90e9d49ac55d63",
+        measurementId: "G-5TDVQQQQFW"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <div class="login">
+      <div class="logo-container">
+        <img src="evilcorp.png" alt="Company Logo">
+      </div>
+      <form id="loginForm">
+        <h2>Sign In</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Login</button>
+        <p id="error-message" style="color:red; display:none;">Wrong username or password</p>
+      </form>
+    </div>
+    <script src="./login.js"></script>
+</body>
+</html>

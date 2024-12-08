@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Path - MR Robot Challenge</title>
+    <link rel="stylesheet" href="advanced.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="left"><a href="../mrrobot_challenge.html" class="back-link"><span>Back to Main Page</span></a>
+        </div>
+        
+        <div class="right">Advanced Path</div>
+    </div>
+    <div class="content">
+        <h2>Background</h2>
+        <p>Your task is to gather information about the renown criminal Whiterose. You were informed from a trusted source that Evil Corporation (E-Corp) is also trying to achieve the same goal and that they already have significant findings. So your goal is to infiltrate the E-Corp website and exfiltrate information.</p>
+        
+        <h2>Step 1</h2>
+        <p>CEO of E-Corp, Phillip Price, is probably someone who would be a good first target. His account on the <a href="../login/login.html" class="highlight">E-Corp website</a> might contain useful information. After minimal research, you find out that Phillip Price's username is phillipprice. Try bruteforcing to discover his password.</p>
+        <div class="input-section">
+            <input type="text" id="step1-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 1, '123456')">
+            <button id="step1-submit">Submit</button>
+            <button class="hint" id="step1-hint">Hint</button>
+            <div class="hint-text" id="step1-hint-text">You are advanced; you do not need a hint.</div>
+        </div>
+        
+        <h2>Step 2</h2>
+        <p>Congratulations, step 1 is complete. Download the zip file from Phillip Price's account; it might contain valuable information.</p>
+        <p>What is the password of employinfo.zip?</p>
+        <div class="input-section">
+            <input type="text" id="step2-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 2, 'ashley')">
+            <button id="step2-submit">Submit</button>
+            <button class="hint" id="step2-hint">Hint</button>
+            <div class="hint-text" id="step2-hint-text">You are advanced; you do not need a hint.</div>
+        </div>
+        <p>What is the password of personal_userinfo.rar?</p>
+        <div class="input-section">
+            <input type="text" id="step3-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 3, 'destiny')">
+            <button id="step3-submit">Submit</button>
+            <button class="hint" id="step3-hint">Hint</button>
+            <div class="hint-text" id="step3-hint-text">You are advanced; you do not need a hint.</div>
+        </div>
+
+        <h2>Step 3</h2>
+        <p>You found usernames and passwords of other employees. Can you crack any of the employees' hashes? If yes, enter the cracked value of the hash below.</p>
+        <div class="input-section">
+            <input type="text" id="step4-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 4, 'loveme1')">
+            <button id="step4-submit">Submit</button>
+            <button class="hint" id="step4-hint">Hint</button>
+            <div class="hint-text" id="step4-hint-text">You are advanced; you do not need a hint.</div>
+        </div>
+
+        <h2>Step 4</h2>
+        <p>What is Whiterose's password?</p>
+        <div class="input-section">
+            <input type="text" id="step5-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 5, 'princess')">
+            <button id="step5-submit">Submit</button>
+            <button class="hint" id="step5-hint">Hint</button>
+            <div class="hint-text" id="step5-hint-text">You are advanced; you do not need a hint.</div>
+        </div>
+    </div>
+    <script src="advanced.js"></script>
+</body>
+</html>
