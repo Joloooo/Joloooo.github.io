@@ -1,0 +1,537 @@
+
+body, h1, img, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Use a clean, readable font */
+}
+
+/* Header Styling */
+header {
+    position: relative; /* Necessary for positioning child elements */
+    background-color: rgba(0, 0, 0, 0.5); /* Light background color */
+    padding: 10px 20px; /* Padding around the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    height: fit-content; /* Fixed height for the header */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center h1 horizontally */
+}
+
+
+
+h1 {
+    color: #ffffff; /* White color for visibility */
+    font-size: 3.5vh; /* Adjust this value to increase or decrease the size */
+    margin-top: 0.3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+    z-index: 2;
+    text-align: center; /* Center text inside the h1 */    
+}
+
+
+#addParty{
+    margin-bottom: 0;
+}
+
+a#page-translation {    
+    right: 20px; /* Position the link on the right */        
+    text-decoration: none;
+    color: black; /* Link color */
+    background-color: white
+    font-weight: bold;
+    font-size: 2.5vh;
+    z-index: 2;
+}
+
+
+
+
+/* Style for the "ENG" link */
+#page-translation {
+    margin-top: 0.5em;
+    margin-left: 1vw;
+    background-color: white; /* White background for the button */
+    color: black; /* Black text color */
+    padding: 5px 10px; /* Padding around the text to create a button-like appearance */
+    border-radius: 5px; /* Slightly rounded corners */    
+    text-decoration: none; /* Remove underline from the link */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */    
+    font-family: Arial, sans-serif; /* Use a clean, readable font */
+
+}
+
+
+
+#page-translation:hover {
+    background-color:  rgb(255, 255, 255, 0.5) /* Slightly change background color on hover */
+}
+
+
+body {    
+    background-image: url('georgia.webp');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the full image is visible */ 
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: 1; /* Place the overlay above the background image */
+}
+
+
+ .dynamicDiv, #additiondiv, #resultDiv {
+    position: relative;
+    z-index: 2;
+}
+
+
+#inputs, #labels{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#mainDiv {
+    display: flex;
+    flex-direction: row; /* Keep the row direction */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    height: auto; /* Let the container grow based on its content */
+    overflow-y: auto; /* Enable scroll if necessary */
+}
+
+.dynamicDiv {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 25vw;
+    padding: 1em;
+    margin: 1em;
+    border: 2px solid #d40000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+#partyLabel, #percentLabel {
+    line-height: 1.5em; /* Match the height of input fields */
+}
+
+.partyInput, .percentInput {
+    padding: 0.4vw 0; /* Adjust padding to match label height */
+    width:15vw;
+}
+
+#labels {
+    display: grid;
+    grid-template-rows: repeat(2, auto); /* Two rows for labels */
+    gap: 0.5em;
+}
+
+#inputs {
+    display: grid;
+    grid-template-rows: repeat(2, auto); /* Two rows for inputs */
+    gap: 0.5em;
+}
+
+
+
+
+#additiondiv{
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    width:25vw;        
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 0em 1em; /* Center the div horizontally */
+    border: 2px solid #d40000; /* Red border matching the flag */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    color: #000; /* Black color for text */
+    text-align: center;    
+    cursor:pointer;
+}
+
+
+#additiondiv:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow for depth effect */
+}
+
+#additiondiv:active {
+    transform: scale(0.95); /* Slightly decrease size to simulate button press */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Revert shadow */
+}
+
+.dynamicDiv label {
+    color: #d40000; /* Red color matching the flag */
+    font-size:1.1vw;
+    Font-weight:800;
+
+}
+
+.dynamicDiv input {    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1vw;
+}
+
+
+
+
+/* results div is here */
+
+#resultsHead{
+text-align: center;
+font-size:2em;
+margin-top: 1vh;;
+}
+
+.mainDescrcolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Adjust based on the number of columns */
+    gap: 10px; /* Optional: space between columns */
+    width: 100%; /* Make sure the container takes up the full width */
+    text-align: center; /* Center the text within each grid cell */
+    
+}
+
+/* Apply grid layout to the content rows */
+.descrcolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Same column structure as header */
+    gap: 0px; /* Optional: space between columns */
+    width: 100%; /* Make sure the container takes up the full width */
+    align-items: center; /* Center items vertically */
+    text-align: center; /* Center the text within each grid cell */
+}
+
+#resultDescription {
+    max-width: 800px; /* Adjust to fit your needs */
+    min-width: 100%;
+    margin: 0; /* Center the grid within the available space */
+
+}
+
+
+.descrcolumn span{
+    font-size: 1.5em;
+}
+
+
+#resultDiv {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    width:45vw;
+    max-height:fit-content;
+    
+    padding: 0em 1.5em;
+    margin: 1em 2em; /* Center the div horizontally */
+    border: 2px solid #d40000; /* Red border matching the flag */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    color: #000; /* Black color for text */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for the semicircle container */
+.semicircle-container {
+    width: 95%;
+    margin-left:2.5% ;    
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    overflow: visible; /* Ensure no cropping */
+}
+
+
+
+/* Style for the tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 10px;
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+    font-size: 1.5em; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+}
+
+
+
+
+@media  (max-width: 500px) {
+    /* Adjust the font size of the header */
+    h1 {
+        font-size: 6.5vw; /* Slightly larger font size for better readability */
+    }
+
+    a#page-translation {  
+        font-size: 4vw;
+        margin-top:2vw ;
+        margin-left:3vw;
+    }
+
+
+
+    /* Adjust the width and padding of dynamicDiv, additiondiv, and resultDiv */
+    .dynamicDiv, #resultDiv {
+        width: 85vw; /* Set width to fit better on small screens */
+        padding: 1em; /* Maintain padding for a balanced design */
+    }
+
+    .dynamicDiv {
+        margin: 0.5em; /* Space between elements */
+        display:grid;
+    }
+
+    .dynamicDiv input {    
+        font-size: 4vw;
+        
+    }
+
+    #additiondiv {
+        width: 85vw;
+        margin-left: 2vw;
+    }
+
+    #resultDiv {
+        width: 90vw; /* Make the resultDiv slightly wider */
+        margin-left: 0.3em 0;
+        padding:0.2em;
+    }
+
+    /* Adjust label font sizes and widths */
+    #partyLabel, #percentLabel {
+        font-size: 3.5vw; /* Increase label font size */
+        line-height: 1.5em;
+        margin-bottom: 0.5em;
+        text-align: left;
+    }
+
+    /* Adjust the size and width of input fields */
+    .partyInput, .percentInput {
+        width: 50vw; /* Keep input fields wide enough */
+        font-size: 3.5vw; /* Increase font size for better readability */
+    }
+
+    .percentInput{
+        height:3.5wv;
+    }
+
+    /* Adjust the text size in the mainDescrcolumn */
+    .mainDescrcolumn {
+        font-size: 2.5vw; /* Smaller text size for better fit */
+    }
+
+    /* Adjust the font size of spans inside descrcolumn */
+    .descrcolumn span {
+        font-size: 2.5vw; /* Adjusted for smaller screens */
+    }
+
+    /* Ensure SVG scales properly */
+    svg {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Stack mainDiv elements vertically, centered on the page */
+    #mainDiv {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+}
+
+
+
+@media  (min-width: 500px) and (max-width: 1024px) {
+    /* Adjust the font size of the header */
+    h1 {
+        font-size: 6.5vw; /* Slightly larger font size for better readability */
+    }
+
+    a#page-translation {  
+        font-size: 4vw;
+        margin-top:2vw ;
+        margin-left:3vw;
+    }
+
+
+
+    /* Adjust the width and padding of dynamicDiv, additiondiv, and resultDiv */
+    .dynamicDiv, #resultDiv {
+        width: 85vw; /* Set width to fit better on small screens */
+        padding: 1em; /* Maintain padding for a balanced design */
+    }
+
+    .dynamicDiv {
+        margin: 0.5em; /* Space between elements */
+        display:grid;
+    }
+
+    .dynamicDiv input {    
+        font-size: 4vw;
+        
+    }
+
+    #additiondiv {
+        width: 85vw;
+        margin-left: 2vw;
+    }
+
+    #resultDiv {
+        width: 90vw; /* Make the resultDiv slightly wider */
+        margin-left: 0.3vw 0;
+        padding:0.2em;
+    }
+
+    /* Adjust label font sizes and widths */
+    #partyLabel, #percentLabel {
+        font-size: 3.5vw; /* Increase label font size */
+        line-height: 1.5em;
+        margin-bottom: 0.em;
+        text-align: left;
+    }
+
+    /* Adjust the size and width of input fields */
+    .partyInput, .percentInput {
+        width: 50vw; /* Keep input fields wide enough */
+        font-size: 3.5vw; /* Increase font size for better readability */
+        
+    }
+
+    .percentInput{
+        height:3.5wv;
+    }
+
+    /* Adjust the text size in the mainDescrcolumn */
+    .mainDescrcolumn {
+        font-size: 2.5vw; /* Smaller text size for better fit */
+    }
+
+    /* Adjust the font size of spans inside descrcolumn */
+    .descrcolumn span {
+        font-size: 2.5vw; /* Adjusted for smaller screens */
+    }
+
+    /* Ensure SVG scales properly */
+    svg {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Stack mainDiv elements vertically, centered on the page */
+    #mainDiv {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+}
+
+
+@media  (min-width: 1024px) and (max-width: 1520px) {
+    /* Adjust the font size of the header */
+    h1 {
+        font-size: 6.5vw; /* Slightly larger font size for better readability */
+    }
+
+    a#page-translation {  
+        font-size: 4vw;
+        margin-top:2vw ;
+        margin-left:3vw;
+    }
+
+
+
+    /* Adjust the width and padding of dynamicDiv, additiondiv, and resultDiv */
+    .dynamicDiv, #resultDiv {
+        width: 85vw; /* Set width to fit better on small screens */
+        padding: 1em; /* Maintain padding for a balanced design */
+    }
+
+    .dynamicDiv {
+        margin: 0.5em; /* Space between elements */
+        display:grid;
+    }
+
+    .dynamicDiv input {    
+        font-size: 4vw;
+        
+    }
+
+    #additiondiv {
+        width: 85vw;
+        margin-left: 0.9vw;
+    }
+
+    #resultDiv {
+        width: 88vw; /* Make the resultDiv slightly wider */
+        margin-left: 0.3vw 0;
+        padding:0.2em;
+    }
+
+    /* Adjust label font sizes and widths */
+    #partyLabel, #percentLabel {
+        font-size: 3.5vw; /* Increase label font size */
+        line-height: 1.5em;
+        margin-bottom: 0.5em;
+        text-align: left;
+    }
+
+    /* Adjust the size and width of input fields */
+    .partyInput, .percentInput {
+        width: 50vw; /* Keep input fields wide enough */
+        font-size: 3.5vw; /* Increase font size for better readability */
+        margin-bottom: 1vw;
+    }
+
+    .percentInput{
+        height:3.5wv;
+        margin-top: 1.2vw;
+    }
+
+    /* Adjust the text size in the mainDescrcolumn */
+    .mainDescrcolumn {
+        font-size: 2.5vw; /* Smaller text size for better fit */
+    }
+
+    /* Adjust the font size of spans inside descrcolumn */
+    .descrcolumn span {
+        font-size: 2.5vw; /* Adjusted for smaller screens */
+    }
+
+    /* Ensure SVG scales properly */
+    svg {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Stack mainDiv elements vertically, centered on the page */
+    #mainDiv {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+}
