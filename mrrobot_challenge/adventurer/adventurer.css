@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2C3E50; /* Dark blue background color */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #E74C3C; /* Red background color */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 4px 2px -2px gray;
+    font-size: 2em; /* Doubling the font size */
+    z-index: 1000; /* Ensure the top bar stays on top */
+}
+
+.top-bar .left {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.top-bar .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+.top-bar .right {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.content {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+h2, h3 {
+    margin: 40px 20px;
+    color: #E74C3C; /* Red color for headers */
+}
+
+p {
+    margin: 20px 20px;
+}
+
+.highlight {
+    color: #E74C3C; /* Red color for links */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.input-section {
+    margin: 20px;
+    position: relative;
+    z-index: 1; /* Ensure input-section is behind the top bar */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 1em;
+    color: black;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+    height: 40px; /* Set a height for the textarea */
+    margin-right: 10px; /* Add space between textarea and buttons */
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    color: black;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+    margin-right: 10px; /* Add space between input and buttons */
+}
+
+.button-group {
+    display: flex;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#step1-submit, #step2-submit, #step3-submit, #step4-submit, #step5-submit, 
+#q1-submit, #q2-submit, #q3-submit, #q4-submit, #q5-submit, #q6-submit,
+#q7-submit, #q8-submit, #q9-submit, #q10-submit, #q11-submit, #q12-submit,
+#q13-submit, #q14-submit, #q15-submit {
+    background-color: #C0392B; /* Dark red color for submit buttons */
+    color: white;
+}
+}
+
+.hint {
+    background-color: #E67E22; /* Orange color for hint buttons */
+    color: black;
+}
+
+.hint-text {
+    display: none;
+    position: absolute; /* Changed from relative */
+    top: -30px;
+    background-color: #E67E22; /* Orange color for hint text */
+    color: black;
+    padding: 5px;
+
+    border-radius: 5px;
+    margin-top: 40px; /* Added margin to ensure it doesn't overlap with other elements */
+    z-index: 1000; /* Ensure hint text stays on top */
+}
+
+.step {
+    background-color: #34495E; /* Slightly different background color for steps */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#step2 {
+    background-color: #3C6382; /* Different background color for step 2 */
+}
+
+#step3 {
+    background-color: #4A69BD; /* Different background color for step 3 */
+}
+
+#step4 {
+    background-color: #6A89CC; /* Different background color for step 4 */
+}
+
+
+
+
+
+
+/* Hide the text and only show the arrow on smaller screens */
+@media (max-width: 720px) {
+    .back-link {
+        display: inline-flex; /* Ensures the link remains visible */
+        align-items: center; /* Centers the arrow vertically */
+        color: white; /* Maintain the arrow color */
+    }
+
+    .back-link::before {
+        content: "←"; /* Display the arrow */
+        font-size: 1.5em; /* Adjust size of the arrow */
+        display: inline-block; /* Ensure the arrow is visible */
+    }
+
+    .back-link span {
+        display: none; /* Hide the "Back to Main Page" text */
+    }
+
+    .top-bar{
+        font-size: 5.5vw;   
+        
+        
+    }
+}

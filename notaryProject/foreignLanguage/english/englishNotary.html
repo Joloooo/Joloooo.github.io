@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Notary Bureau, Notary, Notary Bureau Mzia Arsenashvili"/>
+    <title>Notary</title>
+    <link rel="icon" href="../../images/icon.ico" type="image/x-icon">
+    <meta name="description" content="Description of services of Notary Bureau">
+    <meta property="og:title" content="Notary Bureau" />
+    <meta property="og:description" content="Notary Bureau" />
+    <meta property="og:image" content="icon.ico" />
+    <link href="../../notary.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "DkDzsgry6J4fnQBFI",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <header id="navigationMenu">
+        <div id="firstRow">
+            <img id="bureauIco" src="../../images/icon.ico">
+            <h1>Notary Bureau - Notary Mzia Arsenashvili</h1>
+        </div>
+        <p id="servicesNav">Services</p>
+        <div id="searchContainer">
+            <i id="searchIcon" class="fas fa-search"></i>
+            <input id="searchBar" type="text" placeholder="Search">
+        </div>
+        <a class="languageBar" id="georgian" href='../../notary.html'>KA</a>
+        <a class="languageBar" id="russian" href='../russian/russianNotary.html'>RU</a>     
+        <p id="contactNav">Contact</p>
+    </header>
+
+    <main></main> <!-- Main content will be dynamically populated by JavaScript -->
+    <script type="module" src="englishNotary.js"></script>   
+</body>
+</html>

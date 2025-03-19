@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="ka">
+<head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Notary Bureau, notary, სანოტარო ბიურო ნოტარიუსი მზია არსენაშვილი, ნოტარიუსი, სანოტარო ბიურო "/>
+    <title>Notary</title> 
+    <link rel="icon" href="images/icon.ico" type="image/x-icon">
+    <meta name="description" content="Description of services of Notary Bureau">
+    <meta property="og:title" content="notary bureau" />
+    <meta property="og:description" content="notary bureau" />
+    <meta property="og:image" content="icon.ico" />
+    <link href="notary.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "DkDzsgry6J4fnQBFI",
+      });
+   })();
+</script>    
+</head> 
+
+<body> 
+    <header id="navigationMenu">
+        <div id="firstRow">
+            <img id="bureauIco" src="images/icon.ico">
+            <h1>სანოტარო ბიურო ნოტარიუსი მზია არსენაშვილი</h1>
+        </div>
+        <p id="servicesNav">სერვისები</p>
+        <div id="searchContainer">
+            <i id="searchIcon" class="fas fa-search"></i>
+            <input id="searchBar" type="text" placeholder="ძებნა">
+        </div>
+        <a class="languageBar" id="english" href='foreignLanguage/english/englishNotary.html'>EN</a> 
+        <a class="languageBar" id="russian" href='foreignLanguage/russian/russianNotary.html'>RU</a>     
+        <p id="contactNav">კონტაქტი</p>
+    </header>
+
+    <main></main> <!-- Main content will be dynamically populated by JavaScript -->
+    <script  type="module" src="jsFiles/notary.js"></script>   
+</body>
+</html>

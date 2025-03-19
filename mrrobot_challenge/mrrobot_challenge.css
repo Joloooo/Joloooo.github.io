@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 40px 0;
+    padding-bottom: 4vh;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    padding-top: 10vh;
+    gap: 20px; /* Added gap between divs */
+}
+
+.path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+}
+
+.path:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.8); /* Decreased transparency on hover */
+}
+
+.beginner {
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 2px solid green;
+}
+
+.adventurer {
+    background-color: rgba(255, 255, 0, 0.2);
+    border: 2px solid yellow;
+}
+
+.advanced {
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 2px solid red;
+}
+
+button {
+    background-color: green;
+    color: black;
+    font-size: 1.5em;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    min-width: 150px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+.path p {
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 15px;
+ 
+    }
+
+    .path p {
+        font-size: 0.9em;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+    
+        .path{
+            width:70vw;
+            align-items: center;
+        }
+
+
+
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .path p {
+        font-size: 0.8em;        
+    }
+
+    .buttons {
+    flex-direction: column;
+    }
+
+    .path{
+        width:70vw;
+        align-items: center;
+    }
+
+}

@@ -1,0 +1,361 @@
+/* Basic reset */
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    background-color: #e8ebef;
+}
+
+#navigationMenu {
+    background-color: black;
+    color: white;
+    height: fit-content;    
+    display: grid;
+    grid-template-columns: 0.4fr 3fr 0.1fr 0.1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 1vw;   
+    align-items: center;
+}
+
+#navigationMenu p, #navigationMenu a {
+    color: white;
+    padding: 10px 1vw;
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+.languageBar {
+    padding: 0vw;
+    text-decoration: none;
+}
+
+#navigationMenu p:hover, #navigationMenu a:hover {
+    color: black;
+    cursor: pointer;
+    background-color: white;
+}
+
+#searchContainer {
+    display: flex;
+}
+
+#searchIcon {
+    padding-top: 0.7vh;
+    font-size: 1.3vw;
+    background-color: white;
+    color: black;    
+}
+
+#searchBar {
+    font-size: 1.5vw;    
+    width: 100%;
+    border-radius: 0px;
+}
+
+#searchBar:focus {
+    outline: none;
+}
+
+#bureauIco {
+    height: 2vw;
+    padding: 0.2vw 2vw;
+}
+
+#firstRow {
+    grid-column: 1/6;
+    align-items: center;
+    display: flex;
+}
+
+.roundbox {
+    background-color: white;
+    width: 50vw;
+    margin: auto;
+    margin-bottom: 1vw;
+    text-align: center;
+    font-size: 0.9vw;
+    padding: 1vw;
+    border-radius: 15px;
+}
+
+.textbox {
+    background-color: white;
+    width: 50vw;
+    margin: auto;
+    margin-bottom: 1vw;    
+    font-size: 0.9vw;
+    padding: 1vw;
+    border-radius: 15px;
+}
+
+.textbox h2 {
+    text-align: center;
+}
+
+.textbox h3, .textbox h2 {
+    padding: 1vw;
+}
+
+.textbox h3, .textbox ol li {
+    margin-left: 1vw;
+}
+
+.roundbox:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#contact {    
+    margin: auto;
+    margin-top: 5vw;
+    background-color: white;
+    display: flex;
+    width: min-content;
+}
+
+#contact i span {
+    font-weight: normal;
+    padding-left: 1vw;
+}
+
+#textContact {
+    width: min-content;
+}
+
+#contact i, #contact h2 {
+    margin: 1vw;
+    display: flex;
+}
+
+#contactImage {
+    width: 40VW;
+    padding: 20px;
+}
+
+/* Styling for the online registration container */
+#registrationContainer {
+    background-color: white;
+    width: 50vw;
+    margin: auto;
+    margin-top: 2vw;
+    padding: 2vw;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 1vw;
+}
+
+#registrationContainer h2, #registrationContainer h3 {
+    text-align: center;
+    font-size: 1.2vw;
+    margin-bottom: 1vw;
+    padding: 0.5vw;
+}
+
+#registrationContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#registrationContainer ol {
+    padding-left: 2vw;
+}
+
+#registrationContainer ol li {
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-between;
+    width: 100%;
+}
+
+#registrationContainer input {
+    margin-left: 1vw;
+    margin-top:0.5vw;
+    padding: 0.5vw;
+    font-size: 0.9vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+}
+
+#registrationContainer input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+#registrationContainer button, #onlineRegistration {
+    display: block;
+    margin: 2vw auto;
+    padding: 0.8vw 2vw;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1vw;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#registrationContainer button:hover,  #onlineRegistration:hover {
+    background-color: white;
+    color: green;
+    border: 1px solid green;
+}
+
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+
+
+
+
+
+
+
+/* Extra Small screens (Phones) */
+@media only screen and (max-width: 1024px) {
+    /* Existing styles */
+    h1 {
+      font-size: 6vw; /* sanotaro biuro notariusi */
+    }
+
+    #bureauIco {
+        height: 10vw;
+        padding: 0.2vw 2vw;
+    }
+
+    h2 {
+        font-size: 6.5vw;
+    }
+
+    h3 {
+        font-size: 3.5vw;
+    }
+
+    #navigationMenu {
+        display: grid;
+        grid-template-columns:  1fr 0.2fr 0.2fr 1fr;
+        grid-template-rows: auto auto auto;
+        row-gap: 2vw;
+        text-align: center;
+    }
+
+    #firstRow {
+        grid-column: 1 /-1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #navigationMenu p, #navigationMenu a {
+        font-size: 5.7vw;
+        padding: 0vw 1vw;
+        grid-row: 2 / 3;
+    }
+
+    #searchContainer {
+        justify-content: center;
+        height: 100%;        
+        border: 1.5vw solid black;
+        grid-row: 3 / 3;
+        grid-column: 1/-1;
+    }
+
+    ol {
+        padding-left: 5vw; /* Adjust padding to provide space for list numbers */
+    }
+    
+
+    main {
+      padding-top:1.5vw;
+    }
+
+    #searchBar {
+        font-size: 5.5vw;
+    }
+
+    #searchIcon {
+      padding-top: 2.5vw;  
+      font-size: 5.5vw;
+    }
+
+    .roundbox, .textbox {
+        width: 90vw;
+        font-size: 5.5vw;
+        margin-bottom: 2.5vw;
+        margin-top: 2.5vw;
+    }
+
+    .menuDropdownContent {
+        top: 8vw;
+    }
+
+    #contact {
+        width: 95vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contactImage {
+        width: 90vw;
+        padding: 10px;
+    }
+
+    /* New styles for #registrationContainer and #onlineRegistration */
+    #registrationContainer {
+        width: 90vw; /* Make the container adjust to smaller screen width */
+        margin: 2.5vw auto; /* Adjust margin for mobile */
+        padding: 3vw; /* Increase padding for better touch experience */
+        font-size: 5vw; /* Adjust font size */
+    }
+
+    #registrationContainer h2, #registrationContainer h3 {
+        font-size: 6vw; /* Adjust heading font sizes */
+        margin-bottom: 2vw;
+        padding: 1vw;
+    }
+
+    #registrationContainer form {
+        width: 100%; /* Make form full width */
+    }
+
+    #registrationContainer input, #registrationContainer select, #registrationContainer textarea {
+        font-size: 5vw; /* Adjust input fields font size */
+        padding: 1.5vw; /* Increase padding for touch input */
+        width: 90%; /* Adjust input width */
+    }
+
+    #onlineRegistration, #registrationContainer form button {
+        padding: 3vw 5vw; /* Adjust padding for better tap size */
+        font-size: 5vw; /* Adjust font size */
+    }
+
+    #onlineRegistration:hover {
+        background-color: white;
+        color: green;
+        border: 1px solid green;
+    }
+}

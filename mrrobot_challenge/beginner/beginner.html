@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Path - MR Robot Challenge</title>
+    <link rel="stylesheet" href="beginner.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="left"><a href="../mrrobot_challenge.html" class="back-link"><span>Back to Main Page</span></a>
+        </div>       
+        <div class="right">Beginner Path</div>
+    </div>
+    <div class="content">
+        <h2>Background</h2>
+        <p>Your task is to gather information about the renown criminal Whiterose. You were informed from a trusted source that Evil Corporation (E-Corp) is also trying to achieve the same goal and that they already have significant findings. So your goal is to infiltrate the E-Corp website and exfiltrate information.</p>
+        
+        <h2>Step 1</h2>
+        <p>CEO of E-Corp, Phillip Price, is probably someone who would be a good first target. His account on the <a href="../login/login.html" class="highlight">E-Corp website</a> might contain useful information. After minimal research, you find out that Phillip Price's username is phillipprice. Try bruteforcing to discover his password.</p>
+        <div class="info-div">
+            <h3>Understanding Brute Force Attacks</h3>
+            <p><strong>Concept:</strong> A brute force attack involves trying many passwords or passphrases with the hope of eventually guessing correctly. The attack systematically checks all possible passwords until the correct one is found.</p>
+            <p><strong>Preconditions:</strong></p>
+            <ul>
+                <li>It's often more feasible if you already know the username.</li>
+                <li>Using wordlists like RockYou.txt can significantly speed up the process by focusing on commonly used passwords.</li>
+            </ul>
+            <h3>Setting Up Burp Suite</h3>
+            <p><strong>Starting Burp Suite:</strong></p>
+            <ul>
+                <li>Open Burp Suite.</li>
+                <li>Select "Temporary Project" and click "Next".</li>
+                <li>Use Burp's defaults and click "Start Burp".</li>
+            </ul>
+            <p><strong>Configuring the Browser:</strong></p>
+            <ul>
+                <li>Go to the "Proxy" tab and select "Open Browser". Burp Suite’s built-in browser will open.</li>
+                <li>Ensure that the intercept is on.</li>
+            </ul>
+            <h3>Capturing the Login Request</h3>
+            <p><strong>Navigating to the Login Page:</strong></p>
+            <ul>
+                <li>Use the built-in browser to navigate to the login page of the target website.</li>
+            </ul>
+            <p><strong>Submitting Login Credentials:</strong></p>
+            <ul>
+                <li>Enter the known username and any password (to capture the request).</li>
+                <li>Submit the login form.</li>
+            </ul>
+            <h3>Intercepting and Analyzing the Request</h3>
+            <p><strong>Intercepting the Request:</strong></p>
+            <ul>
+                <li>Ensure the intercept is on in Burp Suite’s Proxy tab.</li>
+                <li>Capture the login request.</li>
+            </ul>
+            <p><strong>Forwarding Requests:</strong></p>
+            <ul>
+                <li>Forward all requests until you find the POST request that includes the username and password fields.</li>
+            </ul>
+            <p><strong>Sending to Intruder:</strong></p>
+            <ul>
+                <li>Right-click on the captured request and select "Send to Intruder".</li>
+            </ul>
+            <h3>Configuring the Intruder for Brute Force</h3>
+            <p><strong>Positions Tab:</strong></p>
+            <ul>
+                <li>In the Intruder tab, go to the "Positions" sub-tab.</li>
+                <li>Clear existing payload positions.</li>
+                <li>Highlight the password field (inside the quotes) and click "Add" to set it as the payload position. It should be highlighted in green.</li>
+            </ul>
+            <p><strong>Payloads Tab:</strong></p>
+            <ul>
+                <li>Switch to the "Payloads" sub-tab.</li>
+                <li>In the "Payload Options" section, click "Load" to load your wordlist (e.g., RockYou.txt or a smaller list for quicker testing).</li>
+            </ul>
+            <h3>Filtering and Running the Attack</h3>
+            <p><strong>Grep – Match:</strong></p>
+            <ul>
+                <li>Go to the "Options" sub-tab.</li>
+                <li>In the "Grep – Match" section, clear any existing filters.</li>
+                <li>Add "Invalid credentials" or any specific message that indicates a login failure. This helps in identifying failed attempts.</li>
+            </ul>
+            <p><strong>Starting the Attack:</strong></p>
+            <ul>
+                <li>Click "Start Attack" to begin the brute force process.</li>
+            </ul>
+            <h3>Analyzing Results</h3>
+            <p><strong>Reviewing Responses:</strong></p>
+            <ul>
+                <li>Once the attack runs, review the responses in the Intruder tab.</li>
+                <li>Sort or filter responses based on the grep filter you set (e.g., "Invalid credentials").</li>
+                <li>Identify any responses that do not contain the failure message, as these might indicate successful login attempts.</li>
+            </ul>
+        </div>
+        <div class="input-section">
+            <input type="text" id="step1-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 1, '123456')">
+            <button id="step1-submit">Submit</button>
+            <button class="hint" id="step1-hint">Hint</button>
+            <div class="hint-text" id="step1-hint-text">Try to user shorter version of RockYou.txt for this task first 20 responses should be sufficient.</div>
+        </div>
+        
+        <h2>Step 2</h2>
+        <p>Congratulations, step 1 is complete. Download the zip file from Phillip Price's account; it might contain valuable information.</p>
+        <p>What is the password of employinfo.zip?</p>
+        <!-- Add this section below the Burp Suite instructions -->
+<div class="info-div">
+    <h3>Understanding John the Ripper</h3>
+    <p><strong>Concept:</strong> John the Ripper (John) is a password cracking tool designed to brute force and dictionary attack hashes. It works by hashing a large number of potential passwords and comparing them to the hash you want to crack.</p>
+    <p><strong>Hashing vs. Cracking:</strong></p>
+    <ul>
+        <li><strong>Hashing:</strong> A one-way function that converts data (like a password) into a fixed-size string of characters, which appears random.</li>
+        <li><strong>Cracking:</strong> Attempting to find the original input (password) that produced a specific hash by comparing hashes of potential passwords to the target hash.</li>
+    </ul>
+    <h3>Converting ZIP Files for John</h3>
+    <p><strong>Purpose:</strong> Since John cannot directly crack ZIP file passwords, the ZIP file needs to be converted into a hash format that John can understand and work with.</p>
+    <p><strong>Tool:</strong> zip2john is used to convert ZIP files into a hash format that John can process.</p>
+    <h3>Step-by-Step Process</h3>
+    <p><strong>Step 1: Installing John the Ripper</strong></p>
+    <p><strong>Installation:</strong> Ensure John the Ripper is installed on your system. It can be installed using package managers like apt for Debian-based systems or brew for macOS.</p>
+    <p><strong>Step 2: Converting ZIP to Hash Format</strong></p>
+    <p><strong>Using zip2john:</strong></p>
+    <ul>
+        <li><strong>Command:</strong> zip2john is the tool used to convert a ZIP file to a hash format.</li>
+        <li><strong>Example Command:</strong> <code>zip2john employinfo.zip > ziphash.txt</code></li>
+        <li>This command takes employinfo.zip and creates a hash file called ziphash.txt.</li>
+    </ul>
+    <p><strong>Step 3: Running John the Ripper</strong></p>
+    <p><strong>Preparing Wordlist:</strong></p>
+    <ul>
+        <li><strong>Wordlist:</strong> John uses wordlists to compare hashed passwords. A common and extensive wordlist is rockyou.txt, which contains millions of common passwords.</li>
+    </ul>
+    <p><strong>Cracking the Password:</strong></p>
+    <ul>
+        <li><strong>Command:</strong> <code>john --wordlist=rockyou.txt ziphash.txt</code></li>
+        <li>This command tells John to use the rockyou.txt wordlist to attempt to crack the password for the hash stored in ziphash.txt.</li>
+    </ul>
+    <h3>Applying the Same Process for RAR Files</h3>
+    <p><strong>Converting RAR to Hash Format:</strong></p>
+    <ul>
+        <li><strong>Tool:</strong> rar2john is used for RAR files.</li>
+        <li><strong>Example Command:</strong> <code>rar2john rarfile.rar > rarhash.txt</code></li>
+        <li>Converts rarfile.rar into a hash file rarhash.txt.</li>
+    </ul>
+    <p><strong>Cracking the RAR Password:</strong></p>
+    <ul>
+        <li><strong>Command:</strong> <code>john --wordlist=../rockyou.txt rarhash.txt</code></li>
+        <li>Uses the rockyou.txt wordlist to attempt to crack the password for the RAR file.</li>
+    </ul>
+</div>
+
+        <div class="input-section">
+            <input type="text" id="step2-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 2, 'ashley')">
+            <button id="step2-submit">Submit</button>
+            <button class="hint" id="step2-hint">Hint</button>
+            <div class="hint-text" id="step2-hint-text">Make sure that after conversion Zip file, document contains Hash.</div>
+        </div>
+        <p>What is the password of personal_userinfo.rar?</p>
+        <div class="input-section">
+            <input type="text" id="step3-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 3, 'destiny')">
+            <button id="step3-submit">Submit</button>
+            <button class="hint" id="step3-hint">Hint</button>
+            <div class="hint-text" id="step3-hint-text">Make sure that after conversion Zip file, document contains Hash.</div>
+        </div>
+
+        <h2>Step 3</h2>
+        <div class="info-div">
+            <h3>Understanding Rainbow tables & dictionary attacks</h3>
+            
+                <li><strong>Traditional Methods:</strong> Tools like John the Ripper (John) hash each word in a wordlist and compare it to the target hash. This can be time-consuming, especially with large wordlists and multiple hashes.</li>
+                <li><strong>Dictionary Attacks:</strong> Uses a pre-defined list of possible passwords (wordlist) to find the correct password by comparing the hash of each word to the target hash.</li>
+            </ul>
+            <h3>Limitations of Traditional Methods</h3>
+            <ul>
+                <li><strong>Time-Consuming:</strong> Hashing and comparing each word for multiple hashes can take a significant amount of time.</li>
+                <li><strong>Efficiency:</strong> Traditional methods may not be efficient when dealing with large datasets or numerous hashes.</li>
+            </ul>
+            <h3>Introducing Rainbow Tables</h3>
+            <p><strong>Concept:</strong> Rainbow tables are precomputed tables for reversing cryptographic hash functions, primarily used for cracking password hashes.</p>
+            <p><strong>Functionality:</strong> Instead of hashing each word during the cracking process, rainbow tables store precomputed hashes of many possible passwords, allowing for quick comparison and retrieval of the original passwords.</p>
+            <h3>Using CrackStation for Efficient Cracking</h3>
+            <p><strong>CrackStation</strong> An online service that uses rainbow tables to crack password hashes quickly and efficiently.</p>
+            <p><strong>How It Works:</strong> CrackStation has a large database of precomputed hashes from a variety of wordlists, including the popular rockyou.txt. By inputting the hashes, CrackStation can quickly find matches without the need to hash each word on-the-fly.</p>
+            
+            <p>Open your web browser and go to <a href="https://crackstation.net/" target="_blank">CrackStation</a>.<p>
+            </ul>
+        </div>
+        <p>You found usernames and passwords of other employees. Can you crack any of the employees' hashes? If yes, enter the cracked value of the hash below.</p>
+        <div class="input-section">
+            <input type="text" id="step4-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 4, 'loveme1')">
+            <button id="step4-submit">Submit</button>
+            <button class="hint" id="step4-hint">Hint</button>
+            <div class="hint-text" id="step4-hint-text">Use Crackstation to quickly discover which has is crackable. Only one hash is crackable from the list.</div>
+        </div>
+
+        <h2>Step 4</h2>
+        <div class="info-div">
+            <h3>Understanding Hashing and Password Cracking Challenges</h3>
+            <p><strong>Variety of Hashes:</strong></p>
+            <p><strong>Concept:</strong> There are numerous hashing algorithms beyond the commonly known ones like SHA-256 and MD5. Examples include bcrypt, scrypt, and more.</p>
+            <p><strong>Challenge:</strong> Rainbow tables may not cover all these algorithms, limiting their effectiveness.</p>
+            <p><strong>Salting:</strong></p>
+            <p><strong>Concept:</strong> Salting involves adding a random string to each password before hashing. This ensures that identical passwords result in different hashes, preventing the use of precomputed hash tables (rainbow tables) for attacks.</p>
+            <p><strong>Purpose:</strong> Enhances security and prevents multiple passwords from being cracked simultaneously using rainbow tables.</p>
+            <p><strong>Implementation:</strong> Salts are typically stored alongside the hash in a database, so they can be used to verify user passwords during the login process without compromising security.</p>
+            <h3>Tools for Cracking Passwords</h3>
+            <p><strong>John the Ripper:</strong> A versatile password-cracking tool that supports many hashing algorithms and can perform brute force and dictionary attacks.</p>
+            <p><strong>Hashcat:</strong> Another powerful password-cracking tool that often complements John the Ripper by supporting different hashes and providing efficient GPU acceleration.</p>
+            <h3>Identifying Hash Types</h3>
+            <p><strong>Hash Identification:</strong></p>
+            <p><strong>Unix System Hashes:</strong> Typically have the structure $format$rounds$salt$hash.</p>
+            <p><strong>Example:</strong> $1$5000$abc123$8cb2237d0679ca88db6464eac60da96345513964</p>
+            <ul>
+                <li>1 stands for MD5.</li>
+                <li>5000 represents the number of hashing rounds.</li>
+                <li>abc123 is the salt.</li>
+                <li>The rest is the actual hash.</li>
+            </ul>
+            <p><strong>Windows System Hashes:</strong> Commonly use NTLM or MD5.</p>
+            <ul>
+                <li><strong>NTLM:</strong> Always 32 hexadecimal characters long, without a salt.</li>
+                <li><strong>MD5:</strong> Represents a 128-bit digest of the input data and is typically found in Windows systems. It does not use prefixes and does not use salt, making it less secure.</li>
+            </ul>
+            <h3>Tools for Identifying Hash Types:</h3>
+            <p><strong>Built-in Tools:</strong> Both John the Ripper and Hashcat have hash identification capabilities, but they may not always be reliable.</p>
+            <p><strong>Specialized Tools:</strong></p>
+            <ul>
+                <li><a href="https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py" target="_blank">Hash ID</a>: A useful tool for hash identification. It comes natively on Kali Linux.</li>
+                <li><a href="https://www.onlinehashcrack.com/hash-identification.php" target="_blank">Online Resources</a>: Provide examples and identification tools for various hashes.</li>
+            </ul>
+            <p><strong>Manual Hash Identification:</strong></p>
+            <ul>
+                <li><a href="https://hashcat.net/wiki/doku.php?id=example_hashes" target="_blank">Example Hashes</a>: The Hashcat website provides a good resource for manually identifying hashes by comparing them to known examples.</li>
+            </ul>
+            <h3>Step-by-Step Process</h3>
+            <p><strong>Step 1: Identifying the Hash</strong></p>
+            <p><strong>Using Built-in Tools:</strong></p>
+            <ul>
+                <li><strong>John the Ripper:</strong> Use the <code>john --list=formats</code> command to list supported hash formats.</li>
+                <li><strong>Hashcat:</strong> Use the <code>hashcat -m</code> option followed by the hash type number.</li>
+            </ul>
+            <p><strong>Using hash-identifier:</strong></p>
+            <ul>
+                <li><strong>Command:</strong> Run the tool on Kali Linux using <code>python hash-id.py</code>.</li>
+                <li><strong>Example:</strong> <code>python hash-id.py hashfile.txt</code></li>
+            </ul>
+            <p><strong>Manual Hash Identification:</strong></p>
+            <ul>
+                <li>Use the <a href="https://hashcat.net/wiki/doku.php?id=example_hashes" target="_blank">Hashcat example hashes resource</a> to compare and identify the hash type.</li>
+            </ul>
+            <p><strong>Step 2: Using John the Ripper</strong></p>
+            <p><strong>Preparing the Hash:</strong></p>
+            <ul>
+                <li>Ensure the hash is in a format that John the Ripper can process.</li>
+            </ul>
+            <p><strong>Running John:</strong></p>
+            <ul>
+                <li><strong>Command:</strong> <code>john --wordlist=rockyou.txt hashfile.txt</code></li>
+                <li>This uses the rockyou.txt wordlist to attempt to crack the password.</li>
+            </ul>
+            <p><strong>Step 3: Using Hashcat</strong></p>
+            <p><strong>Preparing the Hash:</strong></p>
+            <ul>
+                <li>Identify the hash type using <code>hashcat -m</code>.</li>
+            </ul>
+            <p><strong>Running Hashcat:</strong></p>
+            <ul>
+                <li><strong>Command:</strong> <code>hashcat -m [hash-type] -a 0 hashfile.txt rockyou.txt</code></li>
+                <li>Replace [hash-type] with the appropriate number for the hash type.</li>
+            </ul>
+            <p><strong>Handling Salts</strong></p>
+            <p><strong>Unix System:</strong></p>
+            <ul>
+                <li>The salt is included in the hash structure and will be used automatically by tools like John and Hashcat.</li>
+            </ul>
+            <p><strong>Manual Cracking:</strong></p>
+            <ul>
+                <li>For complex or custom salts, you may need to extract the salt manually and use it in your cracking attempt.</li>
+            </ul>
+            <h3>Online Resources and Tools</h3>
+            <ul>
+                <li><a href="https://hashcat.net/wiki/doku.php?id=example_hashes" target="_blank">Hashcat Example Hashes</a>: Useful for identifying and understanding various hash types.</li>
+                <li><a href="https://crackstation.net/" target="_blank">CrackStation</a>: When rainbow tables fail, fall back on more robust tools like John and Hashcat.</li>
+            </ul>
+        </div>
+        <p>What is Whiterose's password?</p>        
+        <div class="input-section">
+            <input type="text" id="step5-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 5, 'princess')">
+            <button id="step5-submit">Submit</button>
+            <button class="hint" id="step5-hint">Hint</button>
+            <div class="hint-text" id="step5-hint-text">Tools are not usefull for this specific instance rely on your understanding of Hashes and discover appropriate hash in https://hashcat.net/wiki/doku.php?id=example_hashes and then crack it using Haschcat.</div>
+        </div>
+    </div>
+    <script src="beginner.js"></script>
+</body>
+</html>

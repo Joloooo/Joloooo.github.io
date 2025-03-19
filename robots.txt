@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /adminpanel/
+Disallow: /hiddenpage/
+Disallow: /secretlogin/
+Disallow: /private-dashboard/
+Disallow: /WebData/
+Disallow: /internaluse/
+Disallow: /confidentialdata/
+Disallow: /notforpublic/
+Disallow: /restrictedarea/
+Disallow: /serverconfig/
+Disallow: /hiddenapi/

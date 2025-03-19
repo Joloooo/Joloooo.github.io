@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventurer's Path - MR Robot Challenge</title>
+    <link rel="stylesheet" href="adventurer.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="left"><a href="../mrrobot_challenge.html" class="back-link"><span>Back to Main Page</span></a>
+        </div>
+        
+        <div class="right">Adventurer's Path</div>
+    </div>
+    <div class="content">
+        <h2>Background</h2>
+        <p>Your task is to gather information about the renown criminal Whiterose. You were informed from a trusted source that Evil Corporation (E-Corp) is also trying to achieve the same goal and that they already have significant findings. So your goal is to infiltrate the E-Corp website and exfiltrate information.</p>
+        
+        <div class="step" id="step1">
+            <h2>Step 1</h2>
+            <h3>Exploring Brute Force Attacks</h3>
+            <div class="input-section">
+                <p>What vulnerabilities are brute force attacks using?</p>
+                <div class="hint-text" id="q1-hint-text">Check out OWASP for more information.</div>
+                <div class="input-group">
+                    <textarea id="q1-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q1-submit">Submit</button>
+                        <button class="hint" id="q1-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>To what part of website's infrastructure is your bruteforcing tool talking to when conducting a bruteforce attack?</p>
+                <div class="hint-text" id="q2-hint-text">Check out OWASP for more information.</div>
+                <div class="input-group">
+                    <textarea id="q2-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q2-submit">Submit</button>
+                        <button class="hint" id="q2-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>What are two different types of bruteforce attacks?</p>
+                <div class="hint-text" id="q3-hint-text">Check out OWASP for more information.</div>
+                <div class="input-group">
+                    <textarea id="q3-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q3-submit">Submit</button>
+                        <button class="hint" id="q3-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>What are some of the renown tools that can be used for bruteforce attacks?</p>
+                <div class="hint-text" id="q4-hint-text">Check out OWASP for more information.</div>
+                <div class="input-group">
+                    <textarea id="q4-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q4-submit">Submit</button>
+                        <button class="hint" id="q4-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>What additional components apart from the tools are necessary to conduct brute force attacks? And why do you need those tools?</p>
+                <div class="hint-text" id="q5-hint-text">Check out OWASP for more information.</div>
+                <div class="input-group">
+                    <textarea id="q5-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q5-submit">Submit</button>
+                        <button class="hint" id="q5-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>What measures can be taken to prevent bruteforce attacks?</p>
+                <div class="hint-text" id="q6-hint-text">Check out OWASP for more information.</div>
+                <div class="input-group">
+                    <textarea id="q6-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q6-submit">Submit</button>
+                        <button class="hint" id="q6-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>CEO of E-Corp, Phillip Price, is probably someone who would be a good first target. His account on the <a href="../login/login.html" class="highlight">E-Corp website</a> might contain useful information. After minimal research, you find out that Phillip Price's username is phillipprice. Try bruteforcing to discover his password.</p>
+            <div class="input-section">
+                <div class="hint-text" id="step1-hint-text">Try using a common password list.</div>
+                <div class="input-group">
+                    <input type="text" id="step1-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 1, '123456')">
+                    <div class="button-group">
+                        <button id="step1-submit">Submit</button>
+                        <button class="hint" id="step1-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step2">
+            <h2>Step 2</h2>
+            <p>Congratulations, step 1 is complete. Download the zip file from Phillip Price's account; it might contain valuable information.</p>
+
+            <div class="input-section">
+                <p>What are hashes?</p>
+                <div class="hint-text" id="q7-hint-text">Codecademy and TechTarget offer good resources.</div>
+                <div class="input-group">
+                    <textarea id="q7-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q7-submit">Submit</button>
+                        <button class="hint" id="q7-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>What is the main difference between encrypting and hashing?</p>
+                <div class="hint-text" id="q8-hint-text">Codecademy and TechTarget offer good resources.</div>
+                <div class="input-group">
+                    <textarea id="q8-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q8-submit">Submit</button>
+                        <button class="hint" id="q8-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>How can hashes be cracked?</p>
+                <div class="hint-text" id="q9-hint-text">Remember what you did in step 1.</div>
+                <div class="input-group">
+                    <textarea id="q9-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q9-submit">Submit</button>
+                        <button class="hint" id="q9-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>What tools are there to crack hashes?</p>
+                <div class="hint-text" id="q10-hint-text">One of the tools is based on the serial killer from the 19th century, Jack the Ripper.</div>
+                <div class="input-group">
+                    <textarea id="q10-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q10-submit">Submit</button>
+                        <button class="hint" id="q10-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>How can the RAR files be cracked?</p>
+                <div class="hint-text" id="q11-hint-text">Research guidelines from "Jack the Reapper" [name is intentionally left incorrect].</div>
+                <div class="input-group">
+                    <textarea id="q11-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q11-submit">Submit</button>
+                        <button class="hint" id="q11-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <p>What is the password of employinfo.zip?</p>
+            <div class="input-section">
+                <div class="hint-text" id="step2-hint-text">Consider common names.</div>
+                <div class="input-group">
+                    <input type="text" id="step2-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 2, 'ashley')">
+                    <div class="button-group">
+                        <button id="step2-submit">Submit</button>
+                        <button class="hint" id="step2-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+            <p>What is the password of personal_userinfo.rar?</p>
+            <div class="input-section">
+                <div class="hint-text" id="step3-hint-text">Think of common words people use.</div>
+                <div class="input-group">
+                    <input type="text" id="step3-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 3, 'destiny')">
+                    <div class="button-group">
+                        <button id="step3-submit">Submit</button>
+                        <button class="hint" id="step3-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step3">
+            <h2>Step 3</h2>
+            <p>You found usernames and passwords of other employees. Now it is time to crack potentially crackable Hashes</p>
+            
+            
+            <div class="input-section">
+                <p>What are rainbow tables?</p>
+                <div class="hint-text" id="q12-hint-text">Consider how you might save time by preparing results in advance for repetitive tasks.</div>
+                <div class="input-group">
+                    <textarea id="q12-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q12-submit">Submit</button>
+                        <button class="hint" id="q12-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>If you only have limited computational resources, which password cracking method would you choose and why?</p>
+                <div class="hint-text" id="q13-hint-text">Think about a method that benefits from extensive preparation rather than real-time computation.</div>
+                <div class="input-group">
+                    <textarea id="q13-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q13-submit">Submit</button>
+                        <button class="hint" id="q13-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+        
+            <p> Can you crack any of the employees' hashes? If yes, enter the cracked value of the hash below.</p>
+        <div class="input-section">
+            <div class="hint-text" id="step4-hint-text">Use hash cracking tools.</div>
+            <div class="input-group">
+                <input type="text" id="step4-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 4, 'loveme1')">
+                <div class="button-group">
+                    <button id="step4-submit">Submit</button>
+                    <button class="hint" id="step4-hint">Hint</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="step" id="step4">
+            <h2>Step 4</h2>      
+            <div class="input-section">
+                <p>Why can you not use salted hashes in the crack station?</p>
+                <div class="hint-text" id="q14-hint-text">Reflect on how adding a unique element to each instance of a process can disrupt uniform approaches.</div>
+                <div class="input-group">
+                    <textarea id="q14-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q14-submit">Submit</button>
+                        <button class="hint" id="q14-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <p>How can you identify hashes? How can you tell apart SHA-1 and MD5 hashes?</p>
+                <div class="hint-text" id="q15-hint-text">Investigate the typical length and character patterns of different hash functions.</div>
+                <div class="input-group">
+                    <textarea id="q15-input" placeholder="Enter your answer"></textarea>
+                    <div class="button-group">
+                        <button id="q15-submit">Submit</button>
+                        <button class="hint" id="q15-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+            
+            <p>What is Whiterose's password?</p>
+            <div class="input-section">
+                <div class="hint-text" id="step5-hint-text">Try a personal touch.</div>
+                <div class="input-group">
+                    <input type="text" id="step5-input" placeholder="Enter password" onkeypress="handleKeyPress(event, 5, 'princess')">
+                    <div class="button-group">
+                        <button id="step5-submit">Submit</button>
+                        <button class="hint" id="step5-hint">Hint</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="adventurer.js"></script>
+</body>
+</html>

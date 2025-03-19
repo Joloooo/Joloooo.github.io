@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content="Georgia 2024 elections, Georgia parliamentary elections 2024, Georgian election predictions 2024, Georgia voting calculator, Georgia election candidates 2024, Georgia election results 2024, Georgian political parties, How to vote in Georgia 2024, 2024 წლის საქართველოს არჩევნები, საქართველოს საპარლამენტო არჩევნები 2024, საარჩევნო პროგნოზები საქართველოში 2024, არჩევნების შედეგები 2024, საქართველოს არჩევნების კანდიდატები 2024, როგორ მივცეთ ხმა 2024">
+
+    <title>საარჩევნო კალკულატორი</title>
+    <link href="electoralgeo.css" rel="stylesheet"/> 
+    <script src="https://kit.fontawesome.com/0caf51eea1.js"></script>
+</head> 
+
+<body id="mainbody"> 
+    <header>
+    <h1>საარჩევნო კალკულატორი</h1>
+    <a id="page-translation" href='electoral.html' >ENG</a> 
+    </header>
+    <div id="mainDiv">
+        <div id="inputsDiv">
+            <div id="valuesDiv">
+                <div class="dynamicDiv" id="dynamicDiv1">
+                    <div id=labels>
+                    <label id="partyLabel">პარტია</label>
+                    <label id="percentLabel">პროცენტი (%) </label>
+                    </div>
+                    <div id="inputs">
+                    <input type="text" class="partyInput" id="partyInput-1">
+                    <input min="0" class="percentInput" id="percentInput-1" type="number">
+                        </div>                   
+                </div>
+            </div>
+            <div id="additiondiv">
+                <h2 id="addParty">პარტიის დამატება</h2>
+                <img loading="slow" src="add-icon-614x460.png" width="100" alt="დამატება"> 
+            </div>
+        </div>  <!-- for inputsdiv -->
+
+        <div id="resultDiv">
+            <h2 id="resultsHead">არჩევნების შედეგები</h2>
+            <div class="semicircle-container">
+                <svg id="semicircle" viewBox="0 0 300 160" preserveAspectRatio="xMidYMid meet"></svg>
+            </div>
+            <div id="resultDescription">
+                <h2 class="mainDescrcolumn"><span>პარტია</span><span>პროპორციული მანდატები</span><span>მანდატები 5%-იანი ბარიერის გამო</span><span>საერთო მანდატები</span></h2>
+                <p class="descrcolumn"><span id="partyName-1"></span><span class="seatNumber" id="seatNumber-1"></span><span id="gainedSeats-1"></span><span class="totalSeats" id="totalSeats-1"></span></p>
+            </div>
+        </div>
+    </div> <!-- for mainDiv -->
+
+    <script src="electoralgeo.js"></script>
+</body>
+
+</html>
